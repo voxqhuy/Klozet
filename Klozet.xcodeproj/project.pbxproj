@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6B22F37C68007A28DD /* AppDelegate.swift */; };
-		C96DEE6E22F37C68007A28DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6D22F37C68007A28DD /* ViewController.swift */; };
+		C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6D22F37C68007A28DD /* HomeViewController.swift */; };
 		C96DEE7122F37C68007A28DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE6F22F37C68007A28DD /* Main.storyboard */; };
 		C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE7222F37C68007A28DD /* Klozet.xcdatamodeld */; };
 		C96DEE7622F37C6E007A28DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE7522F37C6E007A28DD /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		C96DEE6822F37C68007A28DD /* Klozet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klozet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96DEE6B22F37C68007A28DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C96DEE6D22F37C68007A28DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C96DEE6D22F37C68007A28DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C96DEE7022F37C68007A28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C96DEE7322F37C68007A28DD /* Klozet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Klozet.xcdatamodel; sourceTree = "<group>"; };
 		C96DEE7522F37C6E007A28DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,12 +99,13 @@
 		C96DEE6A22F37C68007A28DD /* Klozet */ = {
 			isa = PBXGroup;
 			children = (
-				C96DEE6B22F37C68007A28DD /* AppDelegate.swift */,
-				C96DEE6D22F37C68007A28DD /* ViewController.swift */,
-				C96DEE6F22F37C68007A28DD /* Main.storyboard */,
-				C96DEE7522F37C6E007A28DD /* Assets.xcassets */,
-				C96DEE7722F37C6E007A28DD /* LaunchScreen.storyboard */,
-				C96DEE7A22F37C6E007A28DD /* Info.plist */,
+				C9D819D122F38A0B006F98FF /* Resources */,
+				C9D819C622F38930006F98FF /* Common */,
+				C9D819CC22F3899B006F98FF /* Models */,
+				C9D819CD22F389A6006F98FF /* Views */,
+				C9D819CE22F389AA006F98FF /* Controllers */,
+				C9D819CF22F389C6006F98FF /* Storyboards */,
+				C9D819D022F389F2006F98FF /* Project Files */,
 				C96DEE7222F37C68007A28DD /* Klozet.xcdatamodeld */,
 			);
 			path = Klozet;
@@ -126,6 +127,101 @@
 				C96DEE9022F37C6E007A28DD /* Info.plist */,
 			);
 			path = KlozetUITests;
+			sourceTree = "<group>";
+		};
+		C9D819C622F38930006F98FF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C9D819CB22F3895B006F98FF /* My Classes */,
+				C9D819CA22F38948006F98FF /* Utilities */,
+				C9D819C922F38942006F98FF /* Networking */,
+				C9D819C822F3893B006F98FF /* Extensions */,
+				C9D819C722F38936006F98FF /* Constants */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C9D819C722F38936006F98FF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C9D819C822F3893B006F98FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C9D819C922F38942006F98FF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C9D819CA22F38948006F98FF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C9D819CB22F3895B006F98FF /* My Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "My Classes";
+			sourceTree = "<group>";
+		};
+		C9D819CC22F3899B006F98FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9D819CD22F389A6006F98FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9D819CE22F389AA006F98FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C96DEE6D22F37C68007A28DD /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C9D819CF22F389C6006F98FF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C96DEE6F22F37C68007A28DD /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C9D819D022F389F2006F98FF /* Project Files */ = {
+			isa = PBXGroup;
+			children = (
+				C96DEE6B22F37C68007A28DD /* AppDelegate.swift */,
+				C96DEE7722F37C6E007A28DD /* LaunchScreen.storyboard */,
+				C96DEE7A22F37C6E007A28DD /* Info.plist */,
+			);
+			path = "Project Files";
+			sourceTree = "<group>";
+		};
+		C9D819D122F38A0B006F98FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C96DEE7522F37C6E007A28DD /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C96DEE6E22F37C68007A28DD /* ViewController.swift in Sources */,
+				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
 			);
@@ -437,7 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H63XNGVZ25;
-				INFOPLIST_FILE = Klozet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Klozet/Project Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,7 +551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H63XNGVZ25;
-				INFOPLIST_FILE = Klozet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Klozet/Project Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

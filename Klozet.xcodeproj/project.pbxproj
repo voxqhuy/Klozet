@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93A012C22F48C7900797820 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93A012B22F48C7900797820 /* Collection.storyboard */; };
+		C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */; };
 		C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6B22F37C68007A28DD /* AppDelegate.swift */; };
 		C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6D22F37C68007A28DD /* HomeViewController.swift */; };
 		C96DEE7122F37C68007A28DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE6F22F37C68007A28DD /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93A012B22F48C7900797820 /* Collection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
+		C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		C96DEE6822F37C68007A28DD /* Klozet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klozet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96DEE6B22F37C68007A28DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C96DEE6D22F37C68007A28DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C96DEE6D22F37C68007A28DD /* HomeViewController.swift */,
+				C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				C96DEE6F22F37C68007A28DD /* Main.storyboard */,
+				C93A012B22F48C7900797820 /* Collection.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -327,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93A012C22F48C7900797820 /* Collection.storyboard in Resources */,
 				C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */,
 				C96DEE7622F37C6E007A28DD /* Assets.xcassets in Resources */,
 				C96DEE7122F37C68007A28DD /* Main.storyboard in Resources */,
@@ -357,6 +364,7 @@
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
+				C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="38" y="463"/>
         </scene>
-        <!--ItemCategoryVC-->
+        <!--ItemCategoryColleciontVC-->
         <scene sceneID="ujM-ci-Ild">
             <objects>
-                <viewControllerPlaceholder storyboardName="Item" referencedIdentifier="ItemCategoryVC" id="lj7-mI-GXd" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Item" referencedIdentifier="ItemCategoryColleciontVC" id="lj7-mI-GXd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="itemIcon" id="ZeP-j2-nAh"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSo-dd-oON" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -32,7 +32,7 @@
         <!--OutfitCategoryCollectionVC-->
         <scene sceneID="BWo-1w-xGA">
             <objects>
-                <viewControllerPlaceholder storyboardName="Collection" referencedIdentifier="OutfitCategoryCollectionVC" id="fqS-4U-cfi" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Outfit" referencedIdentifier="OutfitCategoryCollectionVC" id="fqS-4U-cfi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Outfit" image="outfitIcon" id="xYA-nk-KvA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDm-ji-DCW" userLabel="First Responder" sceneMemberID="firstResponder"/>

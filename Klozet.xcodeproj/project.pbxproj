@@ -19,6 +19,9 @@
 		C96DEE8F22F37C6E007A28DD /* KlozetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */; };
 		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
 		DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04522F61FC40009A3A6 /* Item.storyboard */; };
+		DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */; };
+		DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C04C22F622B20009A3A6 /* CategoryCollectionViewCell.swift */; };
+		DE69C04F22F622B20009A3A6 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04D22F622B20009A3A6 /* CategoryCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		C96DEE9022F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE69C04522F61FC40009A3A6 /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
+		DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		DE69C04C22F622B20009A3A6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = Klozet/Controllers/CategoryCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		DE69C04D22F622B20009A3A6 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = Klozet/Controllers/CategoryCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,8 @@
 		C9D819CD22F389A6006F98FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE69C04C22F622B20009A3A6 /* CategoryCollectionViewCell.swift */,
+				DE69C04D22F622B20009A3A6 /* CategoryCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,8 +209,9 @@
 		C9D819CE22F389AA006F98FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C96DEE6D22F37C68007A28DD /* HomeViewController.swift */,
-				C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */,
+				DE69C04B22F6222E0009A3A6 /* Outfit */,
+				DE69C04A22F622260009A3A6 /* Home */,
+				DE69C04922F6221E0009A3A6 /* Item */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,6 +243,30 @@
 				C96DEE7522F37C6E007A28DD /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE69C04922F6221E0009A3A6 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		DE69C04A22F622260009A3A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C96DEE6D22F37C68007A28DD /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DE69C04B22F6222E0009A3A6 /* Outfit */ = {
+			isa = PBXGroup;
+			children = (
+				C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */,
+			);
+			path = Outfit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */,
+				DE69C04F22F622B20009A3A6 /* CategoryCollectionViewCell.xib in Resources */,
 				DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */,
 				DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */,
 				C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */,
@@ -369,9 +403,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */,
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
+				DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */,
 				C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item Category Collection View Controller-->
         <scene sceneID="8ON-5y-B6y">
             <objects>
-                <viewController storyboardIdentifier="ItemCategoryVC" id="M28-cI-sex" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemCategoryColleciontVC" id="M28-cI-sex" customClass="ItemCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vva-Wn-FNz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

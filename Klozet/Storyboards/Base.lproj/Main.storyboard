@@ -6,59 +6,24 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="tne-QT-ifu">
+        <!--HomeVC-->
+        <scene sceneID="Oum-Ls-tGh">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jIT-UF-a4d">
-                                <rect key="frame" x="12" y="56" width="390" height="745"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qci-v2-Ucv">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="715"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="bEe-MN-ali"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVY-jD-u9w">
-                                        <rect key="frame" x="24" y="715" width="342" height="30"/>
-                                        <state key="normal" title="Let's get cooking"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="cVY-jD-u9w" firstAttribute="leading" secondItem="jIT-UF-a4d" secondAttribute="leading" constant="24" id="di4-mS-7sh"/>
-                                    <constraint firstAttribute="trailing" secondItem="cVY-jD-u9w" secondAttribute="trailing" constant="24" id="ofX-MT-AHk"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="jIT-UF-a4d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="L3I-pJ-nAy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jIT-UF-a4d" secondAttribute="bottom" constant="12" id="VoM-Fd-fFI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jIT-UF-a4d" secondAttribute="trailing" constant="12" id="bfC-pl-nyv"/>
-                            <constraint firstItem="jIT-UF-a4d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="cXQ-ur-D70"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="lqy-qO-LjU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeVC" id="lOM-ab-8PK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="Xk0-5k-pxc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eN0-yW-hHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="751"/>
+            <point key="canvasLocation" x="38" y="463"/>
         </scene>
         <!--OutfitCategoryCollectionVC-->
         <scene sceneID="BWo-1w-xGA">
             <objects>
                 <viewControllerPlaceholder storyboardName="Collection" referencedIdentifier="OutfitCategoryCollectionVC" id="fqS-4U-cfi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xYA-nk-KvA"/>
+                    <tabBarItem key="tabBarItem" title="Outfit" image="outfitIcon" id="xYA-nk-KvA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDm-ji-DCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,8 +40,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GrY-jx-Yks"/>
                         <segue destination="fqS-4U-cfi" kind="relationship" relationship="viewControllers" id="GmF-ts-8Tj"/>
+                        <segue destination="lOM-ab-8PK" kind="relationship" relationship="viewControllers" id="l0m-h4-ecl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovz-u7-Tl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,4 +49,8 @@
             <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeIcon" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="outfitIcon" width="33.333332061767578" height="33.333332061767578"/>
+    </resources>
 </document>

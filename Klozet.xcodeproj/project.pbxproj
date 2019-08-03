@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C93A012C22F48C7900797820 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93A012B22F48C7900797820 /* Collection.storyboard */; };
+		C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93A012B22F48C7900797820 /* Outfit.storyboard */; };
 		C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */; };
 		C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6B22F37C68007A28DD /* AppDelegate.swift */; };
 		C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6D22F37C68007A28DD /* HomeViewController.swift */; };
@@ -17,6 +17,7 @@
 		C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE7722F37C6E007A28DD /* LaunchScreen.storyboard */; };
 		C96DEE8422F37C6E007A28DD /* KlozetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE8322F37C6E007A28DD /* KlozetTests.swift */; };
 		C96DEE8F22F37C6E007A28DD /* KlozetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */; };
+		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C93A012B22F48C7900797820 /* Collection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
+		C93A012B22F48C7900797820 /* Outfit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Outfit.storyboard; sourceTree = "<group>"; };
 		C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		C96DEE6822F37C68007A28DD /* Klozet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klozet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96DEE6B22F37C68007A28DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		C96DEE8A22F37C6E007A28DD /* KlozetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlozetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlozetUITests.swift; sourceTree = "<group>"; };
 		C96DEE9022F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				C96DEE6F22F37C68007A28DD /* Main.storyboard */,
-				C93A012B22F48C7900797820 /* Collection.storyboard */,
+				C93A012B22F48C7900797820 /* Outfit.storyboard */,
+				DE69C04322F618D90009A3A6 /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -333,7 +336,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C93A012C22F48C7900797820 /* Collection.storyboard in Resources */,
+				C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */,
+				DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */,
 				C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */,
 				C96DEE7622F37C6E007A28DD /* Assets.xcassets in Resources */,
 				C96DEE7122F37C68007A28DD /* Main.storyboard in Resources */,

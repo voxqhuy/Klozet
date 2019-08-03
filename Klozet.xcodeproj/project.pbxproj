@@ -18,6 +18,7 @@
 		C96DEE8422F37C6E007A28DD /* KlozetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE8322F37C6E007A28DD /* KlozetTests.swift */; };
 		C96DEE8F22F37C6E007A28DD /* KlozetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */; };
 		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
+		DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04522F61FC40009A3A6 /* Item.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlozetUITests.swift; sourceTree = "<group>"; };
 		C96DEE9022F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		DE69C04522F61FC40009A3A6 /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				C96DEE6F22F37C68007A28DD /* Main.storyboard */,
 				C93A012B22F48C7900797820 /* Outfit.storyboard */,
 				DE69C04322F618D90009A3A6 /* Home.storyboard */,
+				DE69C04522F61FC40009A3A6 /* Item.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */,
+				DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */,
 				DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */,
 				C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */,
 				C96DEE7622F37C6E007A28DD /* Assets.xcassets in Resources */,

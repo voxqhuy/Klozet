@@ -19,6 +19,16 @@
             </objects>
             <point key="canvasLocation" x="38" y="463"/>
         </scene>
+        <!--ItemCategoryVC-->
+        <scene sceneID="ujM-ci-Ild">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Item" referencedIdentifier="ItemCategoryVC" id="lj7-mI-GXd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="itemIcon" id="ZeP-j2-nAh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSo-dd-oON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="437"/>
+        </scene>
         <!--OutfitCategoryCollectionVC-->
         <scene sceneID="BWo-1w-xGA">
             <objects>
@@ -27,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDm-ji-DCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-514" y="437"/>
+            <point key="canvasLocation" x="-391" y="437"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="voh-qx-Ltu">
@@ -42,6 +52,7 @@
                     <connections>
                         <segue destination="fqS-4U-cfi" kind="relationship" relationship="viewControllers" id="GmF-ts-8Tj"/>
                         <segue destination="lOM-ab-8PK" kind="relationship" relationship="viewControllers" id="l0m-h4-ecl"/>
+                        <segue destination="lj7-mI-GXd" kind="relationship" relationship="viewControllers" id="FzW-K5-GNM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovz-u7-Tl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,7 +61,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="homeIcon" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="homeIcon" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="itemIcon" width="33.333332061767578" height="33.333332061767578"/>
         <image name="outfitIcon" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
 </document>

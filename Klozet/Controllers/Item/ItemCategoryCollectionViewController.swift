@@ -7,20 +7,28 @@
 
 import UIKit
 
+private let cellNibName = "CategoryCollectionViewCell"
 private let reuseIdentifier = "CategoryCell"
 
 class ItemCategoryCollectionViewController: UICollectionViewController {
 
+    private lazy var myString = MyString()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        registerCell()
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    private func registerCell() {
+        let nib = UINib(nibName: cellNibName, bundle: nil)
+        collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
     /*
@@ -35,10 +43,10 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,9 +55,10 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
     
-        // Configure the cell
+        cell.nameLabel.text = myString.itemCategoryName[indexPath.row]
+        cell.descriptionLabel.text = myString.itemCategoryDescription[indexPath.row]
     
         return cell
     }
@@ -85,4 +94,17 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension ItemCategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth = UIScreen.main.bounds.width - 24
+        let itemHeight: CGFloat = 120
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
 }

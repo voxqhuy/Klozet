@@ -6,25 +6,43 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Item Category Collection View Controller-->
-        <scene sceneID="8ON-5y-B6y">
+        <scene sceneID="vQi-hp-dyZ">
             <objects>
-                <viewController storyboardIdentifier="ItemCategoryColleciontVC" id="M28-cI-sex" customClass="ItemCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vva-Wn-FNz" customClass="UICollectionView">
+                <collectionViewController id="a6h-2b-SWc" customClass="ItemCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TuH-Dg-wwU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="OLU-a6-6Zd"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="6yC-3J-xpa"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vld-ai-i8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9bP-J4-uNr">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dzb-gF-3O0">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="a6h-2b-SWc" id="JZt-pB-G9X"/>
+                            <outlet property="delegate" destination="a6h-2b-SWc" id="2zk-r9-mov"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="TWl-3E-n2O"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p96-jv-ZPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+            <point key="canvasLocation" x="884" y="21"/>
         </scene>
         <!--Item-->
         <scene sceneID="yWO-kb-F31">
@@ -39,7 +57,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="M28-cI-sex" kind="relationship" relationship="rootViewController" id="3fu-bB-N11"/>
+                        <segue destination="a6h-2b-SWc" kind="relationship" relationship="rootViewController" id="YFK-Sh-Mrd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa2-5f-ny8" userLabel="First Responder" sceneMemberID="firstResponder"/>

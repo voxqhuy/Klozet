@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M28-cI-sex">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cja-0f-tXh">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,15 +14,40 @@
         <scene sceneID="8ON-5y-B6y">
             <objects>
                 <viewController storyboardIdentifier="ItemCategoryColleciontVC" id="M28-cI-sex" customClass="ItemCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vva-Wn-FNz">
+                    <view key="view" contentMode="scaleToFill" id="Vva-Wn-FNz" customClass="UICollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OLU-a6-6Zd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6yC-3J-xpa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vld-ai-i8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="yWO-kb-F31">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cja-0f-tXh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="itemIcon" id="yod-hM-e3g"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y7f-9N-nWj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M28-cI-sex" kind="relationship" relationship="rootViewController" id="3fu-bB-N11"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qa2-5f-ny8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="21"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="itemIcon" width="33.333332061767578" height="33.333332061767578"/>
+    </resources>
 </document>

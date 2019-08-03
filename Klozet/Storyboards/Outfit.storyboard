@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SVj-6g-Q2r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SVx-UT-d9N">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,16 +14,40 @@
         <scene sceneID="GPh-7L-SBd">
             <objects>
                 <viewController storyboardIdentifier="OutfitCategoryCollectionVC" id="SVj-6g-Q2r" customClass="OutfitCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FbA-Q7-mwL">
+                    <view key="view" contentMode="scaleToFill" id="FbA-Q7-mwL" customClass="UICollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Skz-dM-FEr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vP7-UC-Xat"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hsn-KE-aQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213" y="130"/>
+            <point key="canvasLocation" x="1121.7391304347827" y="129.91071428571428"/>
+        </scene>
+        <!--Outfit-->
+        <scene sceneID="vy5-MV-rVJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SVx-UT-d9N" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Outfit" image="outfitIcon" id="rEE-hC-92J"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yNE-H7-980">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SVj-6g-Q2r" kind="relationship" relationship="rootViewController" id="jrc-gN-uwo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0b-fb-K7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211.59420289855075" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="outfitIcon" width="33.333332061767578" height="33.333332061767578"/>
+    </resources>
 </document>

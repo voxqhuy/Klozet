@@ -9,31 +9,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--Home-->
         <scene sceneID="Oum-Ls-tGh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeVC" id="lOM-ab-8PK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="Xk0-5k-pxc"/>
+                <viewControllerPlaceholder storyboardName="Home" id="lOM-ab-8PK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="Xk0-5k-pxc"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eN0-yW-hHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="38" y="463"/>
         </scene>
-        <!--ItemCategoryColleciontVC-->
+        <!--Item-->
         <scene sceneID="ujM-ci-Ild">
             <objects>
-                <viewControllerPlaceholder storyboardName="Item" referencedIdentifier="ItemCategoryColleciontVC" id="lj7-mI-GXd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="itemIcon" id="ZeP-j2-nAh"/>
+                <viewControllerPlaceholder storyboardName="Item" id="lj7-mI-GXd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZeP-j2-nAh"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSo-dd-oON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="494" y="437"/>
         </scene>
-        <!--OutfitCategoryCollectionVC-->
+        <!--Outfit-->
         <scene sceneID="BWo-1w-xGA">
             <objects>
-                <viewControllerPlaceholder storyboardName="Outfit" referencedIdentifier="OutfitCategoryCollectionVC" id="fqS-4U-cfi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Outfit" image="outfitIcon" id="xYA-nk-KvA"/>
+                <viewControllerPlaceholder storyboardName="Outfit" id="fqS-4U-cfi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Outfit" id="xYA-nk-KvA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDm-ji-DCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,9 +60,4 @@
             <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="homeIcon" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="itemIcon" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="outfitIcon" width="33.333332061767578" height="33.333332061767578"/>
-    </resources>
 </document>

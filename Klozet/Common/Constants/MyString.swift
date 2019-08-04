@@ -22,4 +22,11 @@ struct MyString {
         "sneakers, boots, sandals, ...",
         "hats, watches, bracelets, ..."
     ]
+    
+    let itemImageName = [
+        "topCategory",
+        "bottomCategory",
+        "shoeCategory",
+        "accessoryCategory"
+    ]
 }

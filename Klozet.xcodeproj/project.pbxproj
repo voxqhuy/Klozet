@@ -22,7 +22,8 @@
 		DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */; };
 		DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C04C22F622B20009A3A6 /* CategoryCollectionViewCell.swift */; };
 		DE69C04F22F622B20009A3A6 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04D22F622B20009A3A6 /* CategoryCollectionViewCell.xib */; };
-		DE69C05122F64F410009A3A6 /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05022F64F410009A3A6 /* MyString.swift */; };
+		DE69C05322F6564B0009A3A6 /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05222F6564B0009A3A6 /* MyString.swift */; };
+		DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05422F656A50009A3A6 /* MyColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,8 @@
 		DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		DE69C04C22F622B20009A3A6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = Klozet/Controllers/CategoryCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		DE69C04D22F622B20009A3A6 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = Klozet/Controllers/CategoryCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		DE69C05022F64F410009A3A6 /* MyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyString.swift; path = Klozet/Controllers/MyString.swift; sourceTree = SOURCE_ROOT; };
+		DE69C05222F6564B0009A3A6 /* MyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyString.swift; sourceTree = "<group>"; };
+		DE69C05422F656A50009A3A6 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +162,8 @@
 		C9D819C722F38936006F98FF /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				DE69C05022F64F410009A3A6 /* MyString.swift */,
+				DE69C05222F6564B0009A3A6 /* MyString.swift */,
+				DE69C05422F656A50009A3A6 /* MyColor.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -406,11 +409,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE69C05122F64F410009A3A6 /* MyString.swift in Sources */,
+				DE69C05322F6564B0009A3A6 /* MyString.swift in Sources */,
 				DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */,
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
+				DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */,
 				DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */,
 				C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */,
 			);

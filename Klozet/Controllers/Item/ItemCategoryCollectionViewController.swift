@@ -13,6 +13,7 @@ private let reuseIdentifier = "CategoryCell"
 class ItemCategoryCollectionViewController: UICollectionViewController {
 
     private lazy var myString = MyString()
+    private lazy var myColor = MyColor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
+        collectionView.backgroundColor = myColor.superLightGray
+        
         registerCell()
         
 

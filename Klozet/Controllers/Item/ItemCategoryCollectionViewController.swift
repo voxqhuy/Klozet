@@ -9,6 +9,7 @@ import UIKit
 
 private let cellNibName = "CategoryCollectionViewCell"
 private let reuseIdentifier = "CategoryCell"
+private let showItemCollectionSegueId = "showItemCollection"
 
 class ItemCategoryCollectionViewController: UICollectionViewController {
 
@@ -34,54 +35,18 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
         collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == showItemCollectionSegueId {
+            let itemCollectionVC = segue.destination as! ItemCollectionViewController
+            
+            guard let sender = sender as? Int else {
+                return
+            }
+            itemCollectionVC.categoryIndex = sender
+        }
     }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 4
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
     
-        cell.nameLabel.text = myString.itemCategoryName[indexPath.row]
-        cell.descriptionLabel.text = myString.itemCategoryDescription[indexPath.row]
-    
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
@@ -96,11 +61,33 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
     
     }
     */
+}
 
+// MARK: - Data Source
+extension ItemCategoryCollectionViewController {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return 4
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
+        
+        cell.nameLabel.text = myString.itemCategoryName[indexPath.row]
+        cell.descriptionLabel.text = myString.itemCategoryDescription[indexPath.row]
+        
+        return cell
+    }
+}
+
+// MARK: - Collection View Delegate
+extension ItemCategoryCollectionViewController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: showItemCollectionSegueId, sender: indexPath.row)
+    }
 }
 
 extension ItemCategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
     }
@@ -111,3 +98,6 @@ extension ItemCategoryCollectionViewController: UICollectionViewDelegateFlowLayo
         return CGSize(width: itemWidth, height: itemHeight)
     }
 }
+
+
+

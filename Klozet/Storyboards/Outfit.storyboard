@@ -6,26 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Outfit Category Collection View Controller-->
-        <scene sceneID="GPh-7L-SBd">
-            <objects>
-                <viewController storyboardIdentifier="OutfitCategoryCollectionVC" id="SVj-6g-Q2r" customClass="OutfitCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FbA-Q7-mwL" customClass="UICollectionView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Skz-dM-FEr"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vP7-UC-Xat"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hsn-KE-aQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1121.7391304347827" y="129.91071428571428"/>
-        </scene>
         <!--Outfit-->
         <scene sceneID="vy5-MV-rVJ">
             <objects>
@@ -39,12 +22,47 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="SVj-6g-Q2r" kind="relationship" relationship="rootViewController" id="jrc-gN-uwo"/>
+                        <segue destination="JWe-He-Btm" kind="relationship" relationship="rootViewController" id="KNP-tu-RwG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0b-fb-K7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="211.59420289855075" y="129.91071428571428"/>
+        </scene>
+        <!--Outfit Category Collection View Controller-->
+        <scene sceneID="NVJ-uY-gLH">
+            <objects>
+                <collectionViewController id="JWe-He-Btm" customClass="OutfitCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XHl-EU-TTD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7ZX-fV-aeS">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="F9W-nC-ktd">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="JWe-He-Btm" id="7ai-Ws-9FM"/>
+                            <outlet property="delegate" destination="JWe-He-Btm" id="KTT-vp-AyS"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="AcL-jq-dIw"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vcu-W6-bpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="130"/>
         </scene>
     </scenes>
     <resources>

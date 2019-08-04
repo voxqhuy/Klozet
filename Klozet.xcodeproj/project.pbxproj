@@ -24,6 +24,7 @@
 		DE69C04F22F622B20009A3A6 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04D22F622B20009A3A6 /* CategoryCollectionViewCell.xib */; };
 		DE69C05322F6564B0009A3A6 /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05222F6564B0009A3A6 /* MyString.swift */; };
 		DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05422F656A50009A3A6 /* MyColor.swift */; };
+		DE69C05722F682F40009A3A6 /* ItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		DE69C04D22F622B20009A3A6 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = Klozet/Controllers/CategoryCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		DE69C05222F6564B0009A3A6 /* MyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyString.swift; sourceTree = "<group>"; };
 		DE69C05422F656A50009A3A6 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
+		DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */,
+				DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */,
 				DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */,
 				C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */,
+				DE69C05722F682F40009A3A6 /* ItemCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,6 @@
 		C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE7222F37C68007A28DD /* Klozet.xcdatamodeld */; };
 		C96DEE7622F37C6E007A28DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE7522F37C6E007A28DD /* Assets.xcassets */; };
 		C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE7722F37C6E007A28DD /* LaunchScreen.storyboard */; };
-		C96DEE8422F37C6E007A28DD /* KlozetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE8322F37C6E007A28DD /* KlozetTests.swift */; };
 		C96DEE8F22F37C6E007A28DD /* KlozetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */; };
 		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
 		DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04522F61FC40009A3A6 /* Item.storyboard */; };
@@ -33,6 +32,8 @@
 		DE69C06622F7A4F70009A3A6 /* CellSelectDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06522F7A4F70009A3A6 /* CellSelectDelegateMock.swift */; };
 		DE69C06822F7A9BE0009A3A6 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06722F7A9BE0009A3A6 /* MyData.swift */; };
 		DE69C06B22F7ABC10009A3A6 /* MyDataFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06A22F7ABC10009A3A6 /* MyDataFake.swift */; };
+		DE69C06E22F7D0A30009A3A6 /* CategoryCollectionViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06D22F7D0A30009A3A6 /* CategoryCollectionViewCellTest.swift */; };
+		DE69C07422F7D4690009A3A6 /* AppDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C07322F7D4690009A3A6 /* AppDelegateTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,6 @@
 		C96DEE7822F37C6E007A28DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C96DEE7A22F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C96DEE7F22F37C6E007A28DD /* KlozetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlozetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C96DEE8322F37C6E007A28DD /* KlozetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlozetTests.swift; sourceTree = "<group>"; };
 		C96DEE8522F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C96DEE8A22F37C6E007A28DD /* KlozetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlozetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlozetUITests.swift; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		DE69C06522F7A4F70009A3A6 /* CellSelectDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSelectDelegateMock.swift; sourceTree = "<group>"; };
 		DE69C06722F7A9BE0009A3A6 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 		DE69C06A22F7ABC10009A3A6 /* MyDataFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataFake.swift; sourceTree = "<group>"; };
+		DE69C06D22F7D0A30009A3A6 /* CategoryCollectionViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCellTest.swift; sourceTree = "<group>"; };
+		DE69C07322F7D4690009A3A6 /* AppDelegateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +137,7 @@
 			children = (
 				C9D819D122F38A0B006F98FF /* Resources */,
 				C9D819C622F38930006F98FF /* Common */,
-				C9D819CC22F3899B006F98FF /* Models */,
+				DE69C07122F7D0CD0009A3A6 /* Models */,
 				C9D819CD22F389A6006F98FF /* Views */,
 				C9D819CE22F389AA006F98FF /* Controllers */,
 				C9D819CF22F389C6006F98FF /* Storyboards */,
@@ -148,9 +150,10 @@
 		C96DEE8222F37C6E007A28DD /* KlozetTests */ = {
 			isa = PBXGroup;
 			children = (
+				DE69C07222F7D4490009A3A6 /* Project Files */,
+				DE69C06C22F7D0890009A3A6 /* Views */,
 				DE69C06322F7A3600009A3A6 /* Common */,
 				DE69C05822F7657A0009A3A6 /* Controllers */,
-				C96DEE8322F37C6E007A28DD /* KlozetTests.swift */,
 				C96DEE8522F37C6E007A28DD /* Info.plist */,
 			);
 			path = KlozetTests;
@@ -159,6 +162,7 @@
 		C96DEE8D22F37C6E007A28DD /* KlozetUITests */ = {
 			isa = PBXGroup;
 			children = (
+				DE69C07522F7D5250009A3A6 /* Controllers */,
 				C96DEE8E22F37C6E007A28DD /* KlozetUITests.swift */,
 				C96DEE9022F37C6E007A28DD /* Info.plist */,
 			);
@@ -168,11 +172,11 @@
 		C9D819C622F38930006F98FF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				DE69C06022F79D090009A3A6 /* Utilities */,
-				DE69C05B22F7668B0009A3A6 /* My Classes */,
 				C9D819C722F38936006F98FF /* Constants */,
-				C9D819C922F38942006F98FF /* Networking */,
-				C9D819C822F3893B006F98FF /* Extensions */,
+				DE69C05B22F7668B0009A3A6 /* My Classes */,
+				DE69C07022F7D0C70009A3A6 /* Extensions */,
+				DE69C06F22F7D0C10009A3A6 /* Networking */,
+				DE69C06022F79D090009A3A6 /* Utilities */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -184,27 +188,6 @@
 				DE69C05422F656A50009A3A6 /* MyColor.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		C9D819C822F3893B006F98FF /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		C9D819C922F38942006F98FF /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		C9D819CC22F3899B006F98FF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		C9D819CD22F389A6006F98FF /* Views */ = {
@@ -328,6 +311,50 @@
 				DE69C06A22F7ABC10009A3A6 /* MyDataFake.swift */,
 			);
 			path = "My Classes";
+			sourceTree = "<group>";
+		};
+		DE69C06C22F7D0890009A3A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C06D22F7D0A30009A3A6 /* CategoryCollectionViewCellTest.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE69C06F22F7D0C10009A3A6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DE69C07022F7D0C70009A3A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE69C07122F7D0CD0009A3A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE69C07222F7D4490009A3A6 /* Project Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C07322F7D4690009A3A6 /* AppDelegateTest.swift */,
+			);
+			path = "Project Files";
+			sourceTree = "<group>";
+		};
+		DE69C07522F7D5250009A3A6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,11 +510,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE69C06E22F7D0A30009A3A6 /* CategoryCollectionViewCellTest.swift in Sources */,
 				DE69C06622F7A4F70009A3A6 /* CellSelectDelegateMock.swift in Sources */,
 				DE69C05E22F7686D0009A3A6 /* MyController.swift in Sources */,
 				DE69C06B22F7ABC10009A3A6 /* MyDataFake.swift in Sources */,
-				C96DEE8422F37C6E007A28DD /* KlozetTests.swift in Sources */,
 				DE69C05A22F765D60009A3A6 /* ItemCategoryViewControllerTest.swift in Sources */,
+				DE69C07422F7D4690009A3A6 /* AppDelegateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

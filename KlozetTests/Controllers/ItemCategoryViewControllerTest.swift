@@ -39,6 +39,7 @@ class ItemCategoryViewControllerTest: XCTestCase {
     private let showItemCollectionSegueId = "showItemCollection"
     
     override func setUp() {
+        super.setUp()
         
         sut = MyController.itemCategoryCollectionViewController.instance as? ItemCategoryCollectionViewController
         destinationSut = MyController.itemCollectionViewController.instance as? ItemCollectionViewController
@@ -51,6 +52,8 @@ class ItemCategoryViewControllerTest: XCTestCase {
     override func tearDown() {
         sut = nil
         destinationSut = nil
+        
+        super.tearDown()
     }
 
     func testViewDidLoad() {

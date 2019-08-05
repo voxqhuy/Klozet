@@ -12,7 +12,7 @@
         <!--Item Category Collection View Controller-->
         <scene sceneID="vQi-hp-dyZ">
             <objects>
-                <collectionViewController id="a6h-2b-SWc" customClass="ItemCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ItemCategoryCollectionViewController" id="a6h-2b-SWc" customClass="ItemCategoryCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TuH-Dg-wwU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Item Collection View Controller-->
         <scene sceneID="eK4-Gn-n3B">
             <objects>
-                <collectionViewController id="2gx-Si-5cu" customClass="ItemCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ItemCollectionViewController" id="2gx-Si-5cu" customClass="ItemCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bfz-nw-qEu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

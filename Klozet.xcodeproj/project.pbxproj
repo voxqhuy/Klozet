@@ -25,6 +25,14 @@
 		DE69C05322F6564B0009A3A6 /* MyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05222F6564B0009A3A6 /* MyString.swift */; };
 		DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05422F656A50009A3A6 /* MyColor.swift */; };
 		DE69C05722F682F40009A3A6 /* ItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */; };
+		DE69C05A22F765D60009A3A6 /* ItemCategoryViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05922F765D60009A3A6 /* ItemCategoryViewControllerTest.swift */; };
+		DE69C05D22F766BE0009A3A6 /* MyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05C22F766BE0009A3A6 /* MyController.swift */; };
+		DE69C05E22F7686D0009A3A6 /* MyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05C22F766BE0009A3A6 /* MyController.swift */; };
+		DE69C05F22F7686E0009A3A6 /* MyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C05C22F766BE0009A3A6 /* MyController.swift */; };
+		DE69C06222F79D450009A3A6 /* CellSelectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06122F79D450009A3A6 /* CellSelectDelegate.swift */; };
+		DE69C06622F7A4F70009A3A6 /* CellSelectDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06522F7A4F70009A3A6 /* CellSelectDelegateMock.swift */; };
+		DE69C06822F7A9BE0009A3A6 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06722F7A9BE0009A3A6 /* MyData.swift */; };
+		DE69C06B22F7ABC10009A3A6 /* MyDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06A22F7ABC10009A3A6 /* MyDataMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +77,12 @@
 		DE69C05222F6564B0009A3A6 /* MyString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyString.swift; sourceTree = "<group>"; };
 		DE69C05422F656A50009A3A6 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewController.swift; sourceTree = "<group>"; };
+		DE69C05922F765D60009A3A6 /* ItemCategoryViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryViewControllerTest.swift; sourceTree = "<group>"; };
+		DE69C05C22F766BE0009A3A6 /* MyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyController.swift; sourceTree = "<group>"; };
+		DE69C06122F79D450009A3A6 /* CellSelectDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSelectDelegate.swift; sourceTree = "<group>"; };
+		DE69C06522F7A4F70009A3A6 /* CellSelectDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSelectDelegateMock.swift; sourceTree = "<group>"; };
+		DE69C06722F7A9BE0009A3A6 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
+		DE69C06A22F7ABC10009A3A6 /* MyDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +148,8 @@
 		C96DEE8222F37C6E007A28DD /* KlozetTests */ = {
 			isa = PBXGroup;
 			children = (
+				DE69C06322F7A3600009A3A6 /* Common */,
+				DE69C05822F7657A0009A3A6 /* Controllers */,
 				C96DEE8322F37C6E007A28DD /* KlozetTests.swift */,
 				C96DEE8522F37C6E007A28DD /* Info.plist */,
 			);
@@ -152,9 +168,9 @@
 		C9D819C622F38930006F98FF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DE69C06022F79D090009A3A6 /* Utilities */,
+				DE69C05B22F7668B0009A3A6 /* My Classes */,
 				C9D819C722F38936006F98FF /* Constants */,
-				C9D819CB22F3895B006F98FF /* My Classes */,
-				C9D819CA22F38948006F98FF /* Utilities */,
 				C9D819C922F38942006F98FF /* Networking */,
 				C9D819C822F3893B006F98FF /* Extensions */,
 			);
@@ -182,20 +198,6 @@
 			children = (
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		C9D819CA22F38948006F98FF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		C9D819CB22F3895B006F98FF /* My Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "My Classes";
 			sourceTree = "<group>";
 		};
 		C9D819CC22F3899B006F98FF /* Models */ = {
@@ -276,6 +278,56 @@
 				C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */,
 			);
 			path = Outfit;
+			sourceTree = "<group>";
+		};
+		DE69C05822F7657A0009A3A6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C05922F765D60009A3A6 /* ItemCategoryViewControllerTest.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DE69C05B22F7668B0009A3A6 /* My Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C05C22F766BE0009A3A6 /* MyController.swift */,
+				DE69C06722F7A9BE0009A3A6 /* MyData.swift */,
+			);
+			path = "My Classes";
+			sourceTree = "<group>";
+		};
+		DE69C06022F79D090009A3A6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C06122F79D450009A3A6 /* CellSelectDelegate.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DE69C06322F7A3600009A3A6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C06922F7AA560009A3A6 /* My Classes */,
+				DE69C06422F7A4D50009A3A6 /* Utilities */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DE69C06422F7A4D50009A3A6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C06522F7A4F70009A3A6 /* CellSelectDelegateMock.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DE69C06922F7AA560009A3A6 /* My Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C06A22F7ABC10009A3A6 /* MyDataMock.swift */,
+			);
+			path = "My Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,10 +469,13 @@
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
+				DE69C06222F79D450009A3A6 /* CellSelectDelegate.swift in Sources */,
 				DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */,
 				DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */,
 				C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */,
 				DE69C05722F682F40009A3A6 /* ItemCollectionViewController.swift in Sources */,
+				DE69C05D22F766BE0009A3A6 /* MyController.swift in Sources */,
+				DE69C06822F7A9BE0009A3A6 /* MyData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +483,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE69C06622F7A4F70009A3A6 /* CellSelectDelegateMock.swift in Sources */,
+				DE69C05E22F7686D0009A3A6 /* MyController.swift in Sources */,
+				DE69C06B22F7ABC10009A3A6 /* MyDataMock.swift in Sources */,
 				C96DEE8422F37C6E007A28DD /* KlozetTests.swift in Sources */,
+				DE69C05A22F765D60009A3A6 /* ItemCategoryViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96DEE8F22F37C6E007A28DD /* KlozetUITests.swift in Sources */,
+				DE69C05F22F7686E0009A3A6 /* MyController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

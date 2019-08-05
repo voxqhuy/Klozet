@@ -13,7 +13,7 @@ class ItemCollectionViewController: UICollectionViewController {
 
     var categoryIndex: Int?
     
-    private var myString = MyString()
+    private var myData = MyData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ItemCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        navigationItem.title = myString.itemCategoryName[categoryIndex!]
+        navigationItem.title = myData.itemCategoryName[categoryIndex!]
         
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)

@@ -1,5 +1,5 @@
 //
-//  MyDataMock.swift
+//  MyDataFake.swift
 //  KlozetTests
 //
 //  Created by Huy Vo on 8/4/19.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyDataMock {
+struct MyDataFake {
     // MARK: - Data Source
     let itemCategoryName = [
         "Top",

@@ -32,7 +32,7 @@
 		DE69C06222F79D450009A3A6 /* CellSelectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06122F79D450009A3A6 /* CellSelectDelegate.swift */; };
 		DE69C06622F7A4F70009A3A6 /* CellSelectDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06522F7A4F70009A3A6 /* CellSelectDelegateMock.swift */; };
 		DE69C06822F7A9BE0009A3A6 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06722F7A9BE0009A3A6 /* MyData.swift */; };
-		DE69C06B22F7ABC10009A3A6 /* MyDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06A22F7ABC10009A3A6 /* MyDataMock.swift */; };
+		DE69C06B22F7ABC10009A3A6 /* MyDataFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C06A22F7ABC10009A3A6 /* MyDataFake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,7 @@
 		DE69C06122F79D450009A3A6 /* CellSelectDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSelectDelegate.swift; sourceTree = "<group>"; };
 		DE69C06522F7A4F70009A3A6 /* CellSelectDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSelectDelegateMock.swift; sourceTree = "<group>"; };
 		DE69C06722F7A9BE0009A3A6 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
-		DE69C06A22F7ABC10009A3A6 /* MyDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataMock.swift; sourceTree = "<group>"; };
+		DE69C06A22F7ABC10009A3A6 /* MyDataFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataFake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,7 +325,7 @@
 		DE69C06922F7AA560009A3A6 /* My Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DE69C06A22F7ABC10009A3A6 /* MyDataMock.swift */,
+				DE69C06A22F7ABC10009A3A6 /* MyDataFake.swift */,
 			);
 			path = "My Classes";
 			sourceTree = "<group>";
@@ -485,7 +485,7 @@
 			files = (
 				DE69C06622F7A4F70009A3A6 /* CellSelectDelegateMock.swift in Sources */,
 				DE69C05E22F7686D0009A3A6 /* MyController.swift in Sources */,
-				DE69C06B22F7ABC10009A3A6 /* MyDataMock.swift in Sources */,
+				DE69C06B22F7ABC10009A3A6 /* MyDataFake.swift in Sources */,
 				C96DEE8422F37C6E007A28DD /* KlozetTests.swift in Sources */,
 				DE69C05A22F765D60009A3A6 /* ItemCategoryViewControllerTest.swift in Sources */,
 			);

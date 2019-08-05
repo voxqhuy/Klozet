@@ -41,8 +41,8 @@ class ItemCategoryViewControllerTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        sut = MyController.itemCategoryCollectionViewController.instance as? ItemCategoryCollectionViewController
-        destinationSut = MyController.itemCollectionViewController.instance as? ItemCollectionViewController
+        sut = MyViewController.itemCategoryCollectionViewController.instance as? ItemCategoryCollectionViewController
+        destinationSut = MyViewController.itemCollectionViewController.instance as? ItemCollectionViewController
         
         let _ = sut.view
         sut.cellSelectDelegate = cellSelectDelegateMock

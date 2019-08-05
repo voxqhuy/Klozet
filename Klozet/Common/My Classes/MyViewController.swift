@@ -1,5 +1,5 @@
 //
-//  MyController.swift
+//  MyViewController.swift
 //  Klozet
 //
 //  Created by Huy Vo on 8/4/19.
@@ -17,7 +17,7 @@ enum MyStoryboard: String {
     }
 }
 
-enum MyController: String {
+enum MyViewController: String {
     case itemCategoryCollectionViewController = "ItemCategoryCollectionViewController"
     case itemCollectionViewController = "ItemCollectionViewController"
     var instance: UIViewController {

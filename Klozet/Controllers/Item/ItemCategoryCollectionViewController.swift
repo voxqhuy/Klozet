@@ -22,6 +22,7 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
+        collectionView.accessibilityIdentifier = AccessibilityId.itemCategoryCollectionView.description
         collectionView.backgroundColor = myColor.superLightGray
         
         registerCell()

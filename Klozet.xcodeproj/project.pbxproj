@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DED6D2D1181A60784A26D53 /* Pods_Klozet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A375BE23B956F1A573D549 /* Pods_Klozet.framework */; };
+		AC76E0EFA5AB206001C4AA68 /* Pods_Klozet_KlozetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5403F2476DC298D17F5E28C4 /* Pods_Klozet_KlozetTests.framework */; };
 		C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93A012B22F48C7900797820 /* Outfit.storyboard */; };
 		C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */; };
 		C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6B22F37C68007A28DD /* AppDelegate.swift */; };
@@ -59,6 +61,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3316871EAE1A46736DEFBACF /* Pods-Klozet-KlozetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klozet-KlozetTests.debug.xcconfig"; path = "Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		42AA767E82354DDD7289369D /* Pods-Klozet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klozet.release.xcconfig"; path = "Target Support Files/Pods-Klozet/Pods-Klozet.release.xcconfig"; sourceTree = "<group>"; };
+		5403F2476DC298D17F5E28C4 /* Pods_Klozet_KlozetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Klozet_KlozetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99CCFDF5EAAFCB8B67254B99 /* Pods-Klozet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klozet.debug.xcconfig"; path = "Target Support Files/Pods-Klozet/Pods-Klozet.debug.xcconfig"; sourceTree = "<group>"; };
+		C3A375BE23B956F1A573D549 /* Pods_Klozet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Klozet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93A012B22F48C7900797820 /* Outfit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Outfit.storyboard; sourceTree = "<group>"; };
 		C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		C96DEE6822F37C68007A28DD /* Klozet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klozet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +82,7 @@
 		C96DEE9022F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C972880822F8718B00890E71 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		C972880922F8718B00890E71 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
+		D8ED71B26F6F8B2C02B993B0 /* Pods-Klozet-KlozetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klozet-KlozetTests.release.xcconfig"; path = "Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE69C04522F61FC40009A3A6 /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
 		DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryCollectionViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DED6D2D1181A60784A26D53 /* Pods_Klozet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC76E0EFA5AB206001C4AA68 /* Pods_Klozet_KlozetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +138,8 @@
 				C96DEE8222F37C6E007A28DD /* KlozetTests */,
 				C96DEE8D22F37C6E007A28DD /* KlozetUITests */,
 				C96DEE6922F37C68007A28DD /* Products */,
+				F13C87CEC61F1A4F26013D16 /* Pods */,
+				FB91A40835BD0920CAF46FCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,6 +398,27 @@
 			path = TestUtilities;
 			sourceTree = "<group>";
 		};
+		F13C87CEC61F1A4F26013D16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99CCFDF5EAAFCB8B67254B99 /* Pods-Klozet.debug.xcconfig */,
+				42AA767E82354DDD7289369D /* Pods-Klozet.release.xcconfig */,
+				3316871EAE1A46736DEFBACF /* Pods-Klozet-KlozetTests.debug.xcconfig */,
+				D8ED71B26F6F8B2C02B993B0 /* Pods-Klozet-KlozetTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB91A40835BD0920CAF46FCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A375BE23B956F1A573D549 /* Pods_Klozet.framework */,
+				5403F2476DC298D17F5E28C4 /* Pods_Klozet_KlozetTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,9 +426,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C96DEE9322F37C6E007A28DD /* Build configuration list for PBXNativeTarget "Klozet" */;
 			buildPhases = (
+				93FF3456E3A1022E7A8D25F2 /* [CP] Check Pods Manifest.lock */,
 				C96DEE6422F37C68007A28DD /* Sources */,
 				C96DEE6522F37C68007A28DD /* Frameworks */,
 				C96DEE6622F37C68007A28DD /* Resources */,
+				73FAA11F7AB43B1F36906355 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -410,9 +445,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C96DEE9622F37C6E007A28DD /* Build configuration list for PBXNativeTarget "KlozetTests" */;
 			buildPhases = (
+				7E0F2FCCB7D1481C16D04797 /* [CP] Check Pods Manifest.lock */,
 				C96DEE7B22F37C6E007A28DD /* Sources */,
 				C96DEE7C22F37C6E007A28DD /* Frameworks */,
 				C96DEE7D22F37C6E007A28DD /* Resources */,
+				98CC360ACA266E64C34AE4D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -515,6 +552,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73FAA11F7AB43B1F36906355 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Klozet/Pods-Klozet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Klozet/Pods-Klozet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Klozet/Pods-Klozet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E0F2FCCB7D1481C16D04797 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Klozet-KlozetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93FF3456E3A1022E7A8D25F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Klozet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98CC360ACA266E64C34AE4D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C96DEE6422F37C68007A28DD /* Sources */ = {
@@ -715,6 +833,7 @@
 		};
 		C96DEE9422F37C6E007A28DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99CCFDF5EAAFCB8B67254B99 /* Pods-Klozet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -733,6 +852,7 @@
 		};
 		C96DEE9522F37C6E007A28DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42AA767E82354DDD7289369D /* Pods-Klozet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -751,6 +871,7 @@
 		};
 		C96DEE9722F37C6E007A28DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3316871EAE1A46736DEFBACF /* Pods-Klozet-KlozetTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -772,6 +893,7 @@
 		};
 		C96DEE9822F37C6E007A28DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8ED71B26F6F8B2C02B993B0 /* Pods-Klozet-KlozetTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

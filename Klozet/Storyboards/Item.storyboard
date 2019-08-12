@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,21 +47,6 @@
             </objects>
             <point key="canvasLocation" x="922" y="21"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="HVw-na-o9T">
-            <objects>
-                <viewController id="9uk-vi-GLt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZVV-6Y-f5v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Xdq-Ts-R9B"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IrJ-96-Cbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1729" y="721"/>
-        </scene>
         <!--Title-->
         <scene sceneID="eK4-Gn-n3B">
             <objects>
@@ -95,7 +79,7 @@
                     <navigationItem key="navigationItem" title="Title" id="kfc-tb-aVe">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="fhN-iy-enI">
                             <connections>
-                                <segue destination="9uk-vi-GLt" kind="show" id="lFt-eM-pgg"/>
+                                <action selector="addItemButtonTapped:" destination="2gx-Si-5cu" id="o0e-Li-HoJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

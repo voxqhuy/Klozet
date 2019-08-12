@@ -11,6 +11,9 @@ enum AccessibilityId {
     // Item Category Collection VC
     case itemCategoryCollectionView
     
+    // Item Collection VC
+    case addItemActionSheet
+    
     var description: String {
         return String(describing: self)
     }

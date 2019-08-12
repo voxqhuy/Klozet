@@ -30,6 +30,13 @@ class ItemCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: Interaction
+    @IBAction func addItemButtonTapped(_ sender: UIBarButtonItem) {
+        promptUserToAddItem(on: sender)
+    }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -86,4 +93,15 @@ class ItemCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension ItemCollectionViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let image = info[.editedImage] as? UIImage else { return }
+        print("image selected \(image)")
+        // TODO perform segue to show Item Edit
+    }
 }

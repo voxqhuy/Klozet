@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cja-0f-tXh">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="922" y="21"/>
         </scene>
-        <!--Title-->
+        <!--Item Collection View Controller-->
         <scene sceneID="eK4-Gn-n3B">
             <objects>
                 <collectionViewController storyboardIdentifier="ItemCollectionViewController" id="2gx-Si-5cu" customClass="ItemCollectionViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,32 +59,77 @@
                             <outlet property="delegate" destination="2gx-Si-5cu" id="wwM-vg-T5u"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="kfc-tb-aVe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="fhN-iy-enI">
-                            <connections>
-                                <action selector="addItemButtonTapped:" destination="2gx-Si-5cu" id="o0e-Li-HoJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <connections>
+                        <segue destination="dMZ-mh-iUh" kind="show" identifier="showItemEdit" id="eJ5-Mm-DK2"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IH-BC-PKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1730" y="21"/>
         </scene>
-        <!--View Controller-->
+        <!--Item Edit View Controller-->
         <scene sceneID="Sew-rW-LPe">
             <objects>
-                <viewController id="dMZ-mh-iUh" sceneMemberID="viewController">
+                <viewController id="dMZ-mh-iUh" customClass="ItemEditViewController" customModule="Klozet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UvK-OI-0ku">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMe-qy-ing">
+                                <rect key="frame" x="12" y="96" width="390" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2D2-dC-0tH">
+                                <rect key="frame" x="0.0" y="134" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2D2-dC-0tH" secondAttribute="height" multiplier="1:1" id="1Cw-jT-N2A"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-0w-sHG">
+                                <rect key="frame" x="12" y="556" width="390" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ast-dv-O9g">
+                                <rect key="frame" x="12" y="594" width="390" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zer-N6-B5l">
+                                <rect key="frame" x="12" y="775" width="390" height="30"/>
+                                <state key="normal" title="Delete item"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QmO-US-Pky" firstAttribute="bottom" secondItem="Zer-N6-B5l" secondAttribute="bottom" constant="8" id="0Jt-3D-DK7"/>
+                            <constraint firstItem="Zer-N6-B5l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ast-dv-O9g" secondAttribute="bottom" constant="8" id="0Vz-jj-Fau"/>
+                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="wMe-qy-ing" secondAttribute="trailing" constant="12" id="26d-IG-ZJn"/>
+                            <constraint firstItem="2D2-dC-0tH" firstAttribute="top" secondItem="wMe-qy-ing" secondAttribute="bottom" constant="8" id="92L-J8-JoT"/>
+                            <constraint firstItem="Zer-N6-B5l" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="CdZ-F9-K8t"/>
+                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="Ast-dv-O9g" secondAttribute="trailing" constant="12" id="EKA-fU-1pR"/>
+                            <constraint firstItem="2D2-dC-0tH" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" id="FkJ-c4-bGL"/>
+                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="Zer-N6-B5l" secondAttribute="trailing" constant="12" id="Woa-G4-oP9"/>
+                            <constraint firstItem="Ast-dv-O9g" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="XR2-fM-bR3"/>
+                            <constraint firstItem="bAd-0w-sHG" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="ai4-e0-CW9"/>
+                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="2D2-dC-0tH" secondAttribute="trailing" id="b8i-Kj-kJL"/>
+                            <constraint firstItem="bAd-0w-sHG" firstAttribute="top" secondItem="2D2-dC-0tH" secondAttribute="bottom" constant="8" id="d5B-78-bIT"/>
+                            <constraint firstItem="wMe-qy-ing" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="hCh-46-N3i"/>
+                            <constraint firstItem="Ast-dv-O9g" firstAttribute="top" secondItem="bAd-0w-sHG" secondAttribute="bottom" constant="8" id="rgb-pf-Ltc"/>
+                            <constraint firstItem="wMe-qy-ing" firstAttribute="top" secondItem="QmO-US-Pky" secondAttribute="top" constant="8" id="ttV-OI-sw1"/>
+                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="bAd-0w-sHG" secondAttribute="trailing" constant="12" id="vnk-nh-Fh5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QmO-US-Pky"/>
                     </view>
+                    <connections>
+                        <outlet property="itemImageView" destination="2D2-dC-0tH" id="Acp-lA-wDW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awK-EB-7Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2572" y="33"/>
+            <point key="canvasLocation" x="3643" y="21"/>
         </scene>
         <!--Item-->
         <scene sceneID="yWO-kb-F31">

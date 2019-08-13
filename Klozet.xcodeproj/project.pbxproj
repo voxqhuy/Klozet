@@ -11,6 +11,8 @@
 		AC76E0EFA5AB206001C4AA68 /* Pods_Klozet_KlozetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5403F2476DC298D17F5E28C4 /* Pods_Klozet_KlozetTests.framework */; };
 		C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93A012B22F48C7900797820 /* Outfit.storyboard */; };
 		C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */; };
+		C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF30B23030BC300D505D3 /* ItemInfoViewController.swift */; };
+		C94AF30F2303558400D505D3 /* ItemEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF30E2303558400D505D3 /* ItemEditViewController.swift */; };
 		C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6B22F37C68007A28DD /* AppDelegate.swift */; };
 		C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6D22F37C68007A28DD /* HomeViewController.swift */; };
 		C96DEE7122F37C68007A28DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE6F22F37C68007A28DD /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		C3A375BE23B956F1A573D549 /* Pods_Klozet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Klozet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93A012B22F48C7900797820 /* Outfit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Outfit.storyboard; sourceTree = "<group>"; };
 		C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		C94AF30B23030BC300D505D3 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
+		C94AF30E2303558400D505D3 /* ItemEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditViewController.swift; sourceTree = "<group>"; };
 		C96DEE6822F37C68007A28DD /* Klozet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klozet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96DEE6B22F37C68007A28DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C96DEE6D22F37C68007A28DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C94AF30A23030B9E00D505D3 /* ItemInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C94AF30B23030BC300D505D3 /* ItemInfoViewController.swift */,
+			);
+			path = ItemInfo;
+			sourceTree = "<group>";
+		};
+		C94AF30D2303556000D505D3 /* ItemEdit */ = {
+			isa = PBXGroup;
+			children = (
+				C94AF30E2303558400D505D3 /* ItemEditViewController.swift */,
+			);
+			path = ItemEdit;
+			sourceTree = "<group>";
+		};
 		C96DEE5F22F37C68007A28DD = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +293,8 @@
 		DE69C04922F6221E0009A3A6 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				C94AF30D2303556000D505D3 /* ItemEdit */,
+				C94AF30A23030B9E00D505D3 /* ItemInfo */,
 				DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */,
 				DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */,
 				C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */,
@@ -642,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE69C05322F6564B0009A3A6 /* MyString.swift in Sources */,
+				C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */,
 				DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */,
 				DE69C07C22F7DD260009A3A6 /* AccessibilityId.swift in Sources */,
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
@@ -651,6 +674,7 @@
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
 				DE69C06222F79D450009A3A6 /* CellSelectDelegate.swift in Sources */,
 				DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */,
+				C94AF30F2303558400D505D3 /* ItemEditViewController.swift in Sources */,
 				DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */,
 				C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */,
 				DE69C05722F682F40009A3A6 /* ItemCollectionViewController.swift in Sources */,

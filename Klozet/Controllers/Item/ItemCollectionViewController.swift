@@ -9,7 +9,7 @@ import UIKit
 
 private let cellNibName = "GridCollectionViewCell"
 private let reuseIdentifier = "GridCell"
-private let showItemCollectionSegueId = "showItemCollection"
+private let showItemEditSegueId = "showItemEdit"
 
 class ItemCollectionViewController: UICollectionViewController {
 
@@ -17,13 +17,18 @@ class ItemCollectionViewController: UICollectionViewController {
     
     private var myData = MyData()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = myData.itemCategoryName[categoryIndex!]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add item", style: .plain, target: self, action: #selector(addItemButtonTapped(_:)))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        navigationItem.title = myData.itemCategoryName[categoryIndex!]
         
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -32,21 +37,29 @@ class ItemCollectionViewController: UICollectionViewController {
     }
     
     // MARK: Interaction
-    @IBAction func addItemButtonTapped(_ sender: UIBarButtonItem) {
+    @objc private func addItemButtonTapped(_ sender: UIBarButtonItem) {
         promptUserToAddItem(on: sender)
     }
-    
-    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        setUpBackButton()
+        
+        if segue.identifier == showItemEditSegueId {
+            let itemEditVC = segue.destination as! ItemEditViewController
+            itemEditVC.newItemImage = sender as? UIImage
+        }
     }
-    */
+    
+    private func setUpBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Cancel"
+        navigationItem.backBarButtonItem = backItem
+    }
+    
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -78,21 +91,6 @@ class ItemCollectionViewController: UICollectionViewController {
     }
     */
 
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
 extension ItemCollectionViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -103,5 +101,6 @@ extension ItemCollectionViewController: UIImagePickerControllerDelegate & UINavi
         guard let image = info[.editedImage] as? UIImage else { return }
         print("image selected \(image)")
         // TODO perform segue to show Item Edit
+        performSegue(withIdentifier: showItemEditSegueId, sender: image)
     }
 }

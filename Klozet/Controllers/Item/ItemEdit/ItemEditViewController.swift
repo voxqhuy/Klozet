@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ItemEditViewController: UIViewController {
 
@@ -29,18 +30,23 @@ class ItemEditViewController: UIViewController {
         navigationItem.title = "Item edit"
         
         navigationItem.leftBarButtonItem?.title = "Cancel"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        assignImageIfAddingItem()
-
-        createCategoryPickerView()
-        addChooseButton()
+        setupUI()
+        hideKeyboardWhenTappedAround()
         
         itemCategories = MyData().itemCategories
+    }
+    
+    private func setupUI() {
+        assignImageIfAddingItem()
+        
+        createCategoryPickerView()
+        addChooseButton()
     }
     
     private func assignImageIfAddingItem() {
@@ -82,6 +88,37 @@ class ItemEditViewController: UIViewController {
     }
     */
 
+    // MARK: - Interaction
+    @objc private func saveButtonTapped() {
+        if inputIsValid() {
+            saveItem()
+        }
+    }
+    
+    private func saveItem() {
+        let itemId = UUID.init().uuidString
+        let selectedCategory = categoryTextField.text!
+        let uploadRef = Storage.storage().reference(withPath: "voxqhuy/Items/\(selectedCategory)/\(itemId).jpg")
+        
+        guard let imageData = itemImageView.image?.jpegData(compressionQuality: 1.0) else { return }
+        let uploadMetadata = StorageMetadata.init()
+        uploadMetadata.contentType = "image/jpeg"
+        
+        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+            if let error = error {
+                print("voxError \(error.localizedDescription)")
+            } else {
+                print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
+            }
+        }
+    }
+    
+    
+    // MARK: - Helpers
+    private func inputIsValid() -> Bool {
+        return true
+        // TODO
+    }
 }
 
 extension ItemEditViewController: UIPickerViewDataSource, UIPickerViewDelegate {

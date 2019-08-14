@@ -24,6 +24,7 @@
 		C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */; };
 		C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206523045BFC002AB296 /* ItemCategory.swift */; };
 		C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */; };
+		C9CC206A2304BB78002AB296 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9CC20692304BB78002AB296 /* GoogleService-Info.plist */; };
 		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
 		DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04522F61FC40009A3A6 /* Item.storyboard */; };
 		DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */; };
@@ -92,6 +93,7 @@
 		C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemCollectionViewController+addItem.swift"; sourceTree = "<group>"; };
 		C9CC206523045BFC002AB296 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		C9CC20692304BB78002AB296 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8ED71B26F6F8B2C02B993B0 /* Pods-Klozet-KlozetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klozet-KlozetTests.release.xcconfig"; path = "Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE69C04522F61FC40009A3A6 /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		C9D819D022F389F2006F98FF /* Project Files */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC20692304BB78002AB296 /* GoogleService-Info.plist */,
 				C96DEE6B22F37C68007A28DD /* AppDelegate.swift */,
 				C96DEE7722F37C6E007A28DD /* LaunchScreen.storyboard */,
 				C96DEE7A22F37C6E007A28DD /* Info.plist */,
@@ -558,6 +561,7 @@
 			files = (
 				C972880B22F8718B00890E71 /* GridCollectionViewCell.xib in Resources */,
 				C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */,
+				C9CC206A2304BB78002AB296 /* GoogleService-Info.plist in Resources */,
 				DE69C04F22F622B20009A3A6 /* CategoryCollectionViewCell.xib in Resources */,
 				DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */,
 				DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */,

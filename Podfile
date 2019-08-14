@@ -4,7 +4,7 @@ platform :ios, '9.0'
 target 'Klozet' do
   use_frameworks!
 
-  pod 'Firebase/Core'
+  pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
 
   target 'KlozetTests' do

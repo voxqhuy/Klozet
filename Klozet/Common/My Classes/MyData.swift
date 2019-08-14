@@ -9,45 +9,12 @@ import Foundation
 
 struct MyData {
     // MARK: - Data Source
-    let itemCategoryName = [
-        "Top",
-        "Bottom",
-        "Shoes",
-        "Accessories"
-    ]
-    
-    let itemCategoryDescription = [
-        "shirts, jackets, sweaters, ...",
-        "shorts, pants, skirts, ...",
-        "sneakers, boots, sandals, ...",
-        "hats, watches, bracelets, ..."
-    ]
-    
-    let itemImageName = [
-        "topCategory",
-        "bottomCategory",
-        "shoeCategory",
-        "accessoryCategory"
-    ]
-    
-    let accessoryCategoryName = [
-        "Top",
-        "Bottom",
-        "Shoes",
-        "Accessories"
-    ]
-    
-    let accessoryCategoryDescription = [
-        "shirts, jackets, sweaters, ...",
-        "shorts, pants, skirts, ...",
-        "sneakers, boots, sandals, ...",
-        "hats, watches, bracelets, ..."
-    ]
-    
-    let accessoryImageName = [
-        "topCategory",
-        "bottomCategory",
-        "shoeCategory",
-        "accessoryCategory"
+    let itemCategories = [
+        ItemCategory(categoryName: "Top", categoryDescription: "shirts, jackets, sweaters, ...", categoryImage: "topCategory"),
+        ItemCategory(categoryName: "Bottom", categoryDescription: "shorts, pants, skirts, ...", categoryImage: "bottomCategory"),
+        ItemCategory(categoryName: "Shoes", categoryDescription: "sneakers, boots, sandals, ...", categoryImage: "shoeCategory"),
+        ItemCategory(categoryName: "Hats", categoryDescription: "", categoryImage: "hatCategory"),
+        ItemCategory(categoryName: "Watches", categoryDescription: "", categoryImage: "watchCategory"),
+        ItemCategory(categoryName: "Bracelets", categoryDescription: "", categoryImage: "braceletCategory"),
     ]
 }

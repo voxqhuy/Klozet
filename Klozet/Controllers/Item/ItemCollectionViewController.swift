@@ -20,7 +20,7 @@ class ItemCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = myData.itemCategoryName[categoryIndex!]
+        navigationItem.title = myData.itemCategories[categoryIndex!].categoryName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add item", style: .plain, target: self, action: #selector(addItemButtonTapped(_:)))
     }
     
@@ -46,7 +46,7 @@ class ItemCollectionViewController: UICollectionViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        setUpBackButton()
+        setupBackButton()
         
         if segue.identifier == showItemEditSegueId {
             let itemEditVC = segue.destination as! ItemEditViewController
@@ -54,7 +54,7 @@ class ItemCollectionViewController: UICollectionViewController {
         }
     }
     
-    private func setUpBackButton() {
+    private func setupBackButton() {
         let backItem = UIBarButtonItem()
         backItem.title = "Cancel"
         navigationItem.backBarButtonItem = backItem

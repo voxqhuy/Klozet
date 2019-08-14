@@ -50,15 +50,20 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
 
 // MARK: - Data Source
 extension ItemCategoryCollectionViewController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myData.itemCategoryName.count
+        return section == 0 ? 3 : myData.itemCategories.count - 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CategoryCollectionViewCell
+        let row = indexPath.section == 0 ? indexPath.row : indexPath.row + 3
         
-        cell.nameLabel.text = myData.itemCategoryName[indexPath.row]
-        cell.descriptionLabel.text = myData.itemCategoryDescription[indexPath.row]
+        cell.nameLabel.text = myData.itemCategories[row].categoryName
+        cell.descriptionLabel.text = myData.itemCategories[row].categoryDescription
         
         return cell
     }

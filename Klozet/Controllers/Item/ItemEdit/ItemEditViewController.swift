@@ -19,6 +19,7 @@ class ItemEditViewController: UIViewController {
     var newItemImage: UIImage?
     
     private var itemCategories: [ItemCategory]?
+    private lazy var service = FirestoreService()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -96,21 +97,9 @@ class ItemEditViewController: UIViewController {
     }
     
     private func saveItem() {
-        let itemId = UUID.init().uuidString
         let selectedCategory = categoryTextField.text!
-        let uploadRef = Storage.storage().reference(withPath: "voxqhuy/Items/\(selectedCategory)/\(itemId).jpg")
         
-        guard let imageData = itemImageView.image?.jpegData(compressionQuality: 1.0) else { return }
-        let uploadMetadata = StorageMetadata.init()
-        uploadMetadata.contentType = "image/jpeg"
-        
-        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
-            if let error = error {
-                print("voxError \(error.localizedDescription)")
-            } else {
-                print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
-            }
-        }
+        service.uploadAndGetPath(for: itemImageView.image, withCategory: selectedCategory)
     }
     
     

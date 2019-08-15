@@ -66,7 +66,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="deleteItemButton" destination="VWw-8k-PR4" id="sae-kE-QCp"/>
-                <outlet property="favorateButton" destination="jpD-Rt-Dwp" id="dJl-lf-w6R"/>
+                <outlet property="favoriteButton" destination="jpD-Rt-Dwp" id="dJl-lf-w6R"/>
                 <outlet property="itemCategoryTextField" destination="EhT-st-vHk" id="QqQ-M7-WvW"/>
                 <outlet property="itemImageView" destination="Gw7-8E-OMX" id="nP0-ud-O5B"/>
                 <outlet property="itemNameTextField" destination="2EY-Ra-Al1" id="Si3-OC-dJ5"/>

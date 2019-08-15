@@ -8,17 +8,43 @@
 import UIKit
 
 class ItemInfoViewController: UIViewController {
-
+    internal var selectedItemName: String?
+    
+    private var itemView: ItemInfoView!
+    private var favoriteButton: UIButton!
+    private var itemImageView: UIImageView!
+    private var nameTextField: UITextField!
+    private var categoryTextField: UITextField!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupMainView()
+    }
+    
+    private func setupMainView() {
+        addMainView()
+        loadViews()
+    }
+    
+    private func addMainView() {
+        itemView = Bundle.main.loadNibNamed("ItemInfoView", owner: self, options: nil)!.first as? ItemInfoView
+        //            itemView.removeFromSuperview()
+        view.addSubview(itemView)
+        itemView.frame = view.bounds
+        itemView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    private func loadViews() {
+        favoriteButton = itemView.favoriteButton
+        itemImageView = itemView.itemImageView
+        nameTextField = itemView.itemNameTextField
+        categoryTextField = itemView.itemCategoryTextField
+        itemView.deleteItemButton.removeFromSuperview()
     }
     
 
@@ -32,4 +58,5 @@ class ItemInfoViewController: UIViewController {
     }
     */
 
+    
 }

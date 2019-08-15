@@ -9,7 +9,7 @@ import UIKit
 
 class ItemInfoView: UIView {
 
-    @IBOutlet var favorateButton: UIButton!
+    @IBOutlet var favoriteButton: UIButton!
     @IBOutlet var itemImageView: UIImageView!
     @IBOutlet var itemNameTextField: UITextField!
     @IBOutlet var itemCategoryTextField: UITextField!

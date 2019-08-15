@@ -9,14 +9,14 @@ import UIKit
 import CoreData
 
 class ItemEditViewController: UIViewController {
-
-    @IBOutlet var favoriteButton: UIButton!
-    @IBOutlet var itemImageView: UIImageView!
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var categoryTextField: UITextField!
-    @IBOutlet var deleteItemButton: UIButton!
-    
     internal var newItemImage: UIImage?
+    
+    private var itemView: ItemInfoView!
+    private var favoriteButton: UIButton!
+    private var itemImageView: UIImageView!
+    private var nameTextField: UITextField!
+    private var categoryTextField: UITextField!
+    private var deleteItemButton: UIButton!
     
     private var itemCategories: [ItemCategory]?
     private lazy var service = FirestoreService()
@@ -41,10 +41,32 @@ class ItemEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupMainView()
         setupUI()
         hideKeyboardWhenTappedAround()
         
         itemCategories = MyData().itemCategories
+    }
+    
+    private func setupMainView() {
+        addMainView()
+        assignViews()
+    }
+    
+    private func addMainView() {
+        itemView = Bundle.main.loadNibNamed("ItemInfoView", owner: self, options: nil)!.first as? ItemInfoView
+        //            itemView.removeFromSuperview()
+        view.addSubview(itemView)
+        itemView.frame = view.bounds
+        itemView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    private func assignViews() {
+        favoriteButton = itemView.favoriteButton
+        itemImageView = itemView.itemImageView
+        nameTextField = itemView.itemNameTextField
+        categoryTextField = itemView.itemCategoryTextField
+        deleteItemButton = itemView.deleteItemButton
     }
     
     private func setupUI() {
@@ -107,7 +129,7 @@ class ItemEditViewController: UIViewController {
             switch uploadResult {
             case let .failure(errorString):
                 print(errorString)
-                presentAlert(forCase: .failToUploadItemImage)
+                self.presentAlert(forCase: .failToUploadItemImage)
                 
             case let .success(imagePath):
                 self.saveItemToCoreData(with: imagePath)

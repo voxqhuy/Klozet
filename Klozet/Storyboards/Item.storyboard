@@ -93,62 +93,9 @@
                     <view key="view" contentMode="scaleToFill" id="UvK-OI-0ku">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMe-qy-ing">
-                                <rect key="frame" x="12" y="72" width="351" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2D2-dC-0tH">
-                                <rect key="frame" x="0.0" y="110" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2D2-dC-0tH" secondAttribute="height" multiplier="1:1" id="1Cw-jT-N2A"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-0w-sHG">
-                                <rect key="frame" x="12" y="493" width="351" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ast-dv-O9g">
-                                <rect key="frame" x="12" y="531" width="351" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zer-N6-B5l">
-                                <rect key="frame" x="12" y="580" width="351" height="30"/>
-                                <state key="normal" title="Delete item"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="QmO-US-Pky" firstAttribute="bottom" secondItem="Zer-N6-B5l" secondAttribute="bottom" constant="8" id="0Jt-3D-DK7"/>
-                            <constraint firstItem="Zer-N6-B5l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ast-dv-O9g" secondAttribute="bottom" constant="8" id="0Vz-jj-Fau"/>
-                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="wMe-qy-ing" secondAttribute="trailing" constant="12" id="26d-IG-ZJn"/>
-                            <constraint firstItem="2D2-dC-0tH" firstAttribute="top" secondItem="wMe-qy-ing" secondAttribute="bottom" constant="8" id="92L-J8-JoT"/>
-                            <constraint firstItem="Zer-N6-B5l" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="CdZ-F9-K8t"/>
-                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="Ast-dv-O9g" secondAttribute="trailing" constant="12" id="EKA-fU-1pR"/>
-                            <constraint firstItem="2D2-dC-0tH" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" id="FkJ-c4-bGL"/>
-                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="Zer-N6-B5l" secondAttribute="trailing" constant="12" id="Woa-G4-oP9"/>
-                            <constraint firstItem="Ast-dv-O9g" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="XR2-fM-bR3"/>
-                            <constraint firstItem="bAd-0w-sHG" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="ai4-e0-CW9"/>
-                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="2D2-dC-0tH" secondAttribute="trailing" id="b8i-Kj-kJL"/>
-                            <constraint firstItem="bAd-0w-sHG" firstAttribute="top" secondItem="2D2-dC-0tH" secondAttribute="bottom" constant="8" id="d5B-78-bIT"/>
-                            <constraint firstItem="wMe-qy-ing" firstAttribute="leading" secondItem="QmO-US-Pky" secondAttribute="leading" constant="12" id="hCh-46-N3i"/>
-                            <constraint firstItem="Ast-dv-O9g" firstAttribute="top" secondItem="bAd-0w-sHG" secondAttribute="bottom" constant="8" id="rgb-pf-Ltc"/>
-                            <constraint firstItem="wMe-qy-ing" firstAttribute="top" secondItem="QmO-US-Pky" secondAttribute="top" constant="8" id="ttV-OI-sw1"/>
-                            <constraint firstItem="QmO-US-Pky" firstAttribute="trailing" secondItem="bAd-0w-sHG" secondAttribute="trailing" constant="12" id="vnk-nh-Fh5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QmO-US-Pky"/>
                     </view>
-                    <connections>
-                        <outlet property="categoryTextField" destination="Ast-dv-O9g" id="CJj-XM-hcq"/>
-                        <outlet property="deleteItemButton" destination="Zer-N6-B5l" id="8xM-Ng-NKm"/>
-                        <outlet property="favoriteButton" destination="wMe-qy-ing" id="cc3-mN-Rp8"/>
-                        <outlet property="itemImageView" destination="2D2-dC-0tH" id="Acp-lA-wDW"/>
-                        <outlet property="nameTextField" destination="bAd-0w-sHG" id="mmb-dD-a5X"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awK-EB-7Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

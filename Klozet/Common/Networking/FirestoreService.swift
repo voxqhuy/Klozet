@@ -20,9 +20,10 @@ struct FirestoreService {
         
         uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
             if let error = error {
-                print("voxError \(error.localizedDescription)")
+                completion(.failure("voxError. Fail to upload image. Description: \(error.localizedDescription)"))
+                print()
             } else {
-                print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
+                completion(.success(downloadMetadata!.name!))
             }
         }
     }

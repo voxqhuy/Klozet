@@ -22,6 +22,9 @@
 		C972880A22F8718B00890E71 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C972880822F8718B00890E71 /* GridCollectionViewCell.swift */; };
 		C972880B22F8718B00890E71 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C972880922F8718B00890E71 /* GridCollectionViewCell.xib */; };
 		C9A08D8A2305A4E50010304E /* NetworkingHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D892305A4E50010304E /* NetworkingHandlers.swift */; };
+		C9A08D8D2305AA480010304E /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D8B2305AA480010304E /* Item+CoreDataClass.swift */; };
+		C9A08D8E2305AA480010304E /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D8C2305AA480010304E /* Item+CoreDataProperties.swift */; };
+		C9A08D912305AB7C0010304E /* MyCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D902305AB7C0010304E /* MyCoreData.swift */; };
 		C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */; };
 		C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206523045BFC002AB296 /* ItemCategory.swift */; };
 		C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */; };
@@ -93,6 +96,9 @@
 		C972880822F8718B00890E71 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		C972880922F8718B00890E71 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
 		C9A08D892305A4E50010304E /* NetworkingHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHandlers.swift; sourceTree = "<group>"; };
+		C9A08D8B2305AA480010304E /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9A08D8C2305AA480010304E /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9A08D902305AB7C0010304E /* MyCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoreData.swift; sourceTree = "<group>"; };
 		C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemCollectionViewController+addItem.swift"; sourceTree = "<group>"; };
 		C9CC206523045BFC002AB296 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -230,6 +236,16 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		C9A08D8F2305AA6D0010304E /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				C9CC206523045BFC002AB296 /* ItemCategory.swift */,
+				C9A08D8B2305AA480010304E /* Item+CoreDataClass.swift */,
+				C9A08D8C2305AA480010304E /* Item+CoreDataProperties.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		C9D819C622F38930006F98FF /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +359,7 @@
 				DE69C05C22F766BE0009A3A6 /* MyViewController.swift */,
 				DE69C06722F7A9BE0009A3A6 /* MyData.swift */,
 				DE69C07B22F7DD260009A3A6 /* AccessibilityId.swift */,
+				C9A08D902305AB7C0010304E /* MyCoreData.swift */,
 			);
 			path = "My Classes";
 			sourceTree = "<group>";
@@ -409,7 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				C96DEE7222F37C68007A28DD /* Klozet.xcdatamodeld */,
-				C9CC206523045BFC002AB296 /* ItemCategory.swift */,
+				C9A08D8F2305AA6D0010304E /* Item */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -679,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A08D8E2305AA480010304E /* Item+CoreDataProperties.swift in Sources */,
 				DE69C05322F6564B0009A3A6 /* MyString.swift in Sources */,
 				C9CC206E2304C16A002AB296 /* FirestoreService.swift in Sources */,
 				C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */,
@@ -695,8 +713,10 @@
 				C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */,
 				DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */,
 				C94AF30F2303558400D505D3 /* ItemEditViewController.swift in Sources */,
+				C9A08D8D2305AA480010304E /* Item+CoreDataClass.swift in Sources */,
 				DE69C04E22F622B20009A3A6 /* CategoryCollectionViewCell.swift in Sources */,
 				C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */,
+				C9A08D912305AB7C0010304E /* MyCoreData.swift in Sources */,
 				DE69C05722F682F40009A3A6 /* ItemCollectionViewController.swift in Sources */,
 				DE69C05D22F766BE0009A3A6 /* MyViewController.swift in Sources */,
 				DE69C06822F7A9BE0009A3A6 /* MyData.swift in Sources */,

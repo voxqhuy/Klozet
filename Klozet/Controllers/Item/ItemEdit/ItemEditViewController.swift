@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 class ItemEditViewController: UIViewController {
 
@@ -99,7 +98,19 @@ class ItemEditViewController: UIViewController {
     private func saveItem() {
         let selectedCategory = categoryTextField.text!
         
-        service.uploadAndGetPath(for: itemImageView.image, withCategory: selectedCategory)
+        service.uploadImageAndGetPath(for: itemImageView.image!, withCategory: selectedCategory) {
+            [weak self] (uploadResult) in
+            guard let self = self else { return }
+            
+            switch uploadResult {
+            case let .failure(errorString):
+                print(errorString)
+                // TODO present alert
+            case let .success(imagePath):
+                break
+                // TODO save to Core Data
+            }
+        }
     }
     
     

@@ -21,6 +21,7 @@
 		C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE7722F37C6E007A28DD /* LaunchScreen.storyboard */; };
 		C972880A22F8718B00890E71 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C972880822F8718B00890E71 /* GridCollectionViewCell.swift */; };
 		C972880B22F8718B00890E71 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C972880922F8718B00890E71 /* GridCollectionViewCell.xib */; };
+		C9A08D8A2305A4E50010304E /* NetworkingHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D892305A4E50010304E /* NetworkingHandlers.swift */; };
 		C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */; };
 		C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206523045BFC002AB296 /* ItemCategory.swift */; };
 		C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */; };
@@ -91,6 +92,7 @@
 		C96DEE9022F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C972880822F8718B00890E71 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		C972880922F8718B00890E71 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
+		C9A08D892305A4E50010304E /* NetworkingHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHandlers.swift; sourceTree = "<group>"; };
 		C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemCollectionViewController+addItem.swift"; sourceTree = "<group>"; };
 		C9CC206523045BFC002AB296 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CC206D2304C16A002AB296 /* FirestoreService.swift */,
+				C9A08D892305A4E50010304E /* NetworkingHandlers.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				C9CC206E2304C16A002AB296 /* FirestoreService.swift in Sources */,
 				C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */,
 				DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */,
+				C9A08D8A2305A4E50010304E /* NetworkingHandlers.swift in Sources */,
 				C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */,
 				DE69C07C22F7DD260009A3A6 /* AccessibilityId.swift in Sources */,
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,

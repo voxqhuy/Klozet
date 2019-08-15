@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ItemEditViewController: UIViewController {
 
@@ -15,10 +16,14 @@ class ItemEditViewController: UIViewController {
     @IBOutlet var categoryTextField: UITextField!
     @IBOutlet var deleteItemButton: UIButton!
     
-    var newItemImage: UIImage?
+    internal var newItemImage: UIImage?
     
     private var itemCategories: [ItemCategory]?
     private lazy var service = FirestoreService()
+    
+    private lazy var myCoreData = MyCoreData(modelName: "Klozet")
+    private var managedContext: NSManagedObjectContext!
+    private let coreDataEntity = "Item"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -72,11 +77,6 @@ class ItemEditViewController: UIViewController {
         
         categoryTextField.inputAccessoryView = toolBar
     }
-    
-//    @objc private func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-    
 
     /*
     // MARK: - Navigation
@@ -90,7 +90,9 @@ class ItemEditViewController: UIViewController {
 
     // MARK: - Interaction
     @objc private func saveButtonTapped() {
-        if inputIsValid() {
+        if inputIsInvalid {
+            presentAlert(forCase: .invalidItemInput)
+        } else {
             saveItem()
         }
     }
@@ -105,21 +107,32 @@ class ItemEditViewController: UIViewController {
             switch uploadResult {
             case let .failure(errorString):
                 print(errorString)
-                // TODO present alert
+                presentAlert(forCase: .failToUploadItemImage)
+                
             case let .success(imagePath):
-                break
-                // TODO save to Core Data
+                self.saveItemToCoreData(with: imagePath)
             }
         }
     }
     
     
     // MARK: - Helpers
-    private func inputIsValid() -> Bool {
-        return true
-        // TODO
+    private var inputIsInvalid: Bool {
+        return nameTextField.text?.isEmpty ?? true ||
+            categoryTextField.text?.isEmpty ?? true
+    }
+    
+    private func saveItemToCoreData(with imagePath: String) {
+        let item = NSEntityDescription.insertNewObject(forEntityName: coreDataEntity, into: managedContext) as! Item
+        item.itemName = nameTextField.text
+        item.category = categoryTextField.text
+        item.isFavorite = false // TODO make favorite button
+        item.imagePath = imagePath
+        
+        try! managedContext.save()
     }
 }
+
 
 extension ItemEditViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

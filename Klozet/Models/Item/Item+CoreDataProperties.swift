@@ -17,7 +17,7 @@ extension Item {
     }
 
     @NSManaged public var category: String?
-    @NSManaged public var imageUrl: String?
+    @NSManaged public var imagePath: String?
     @NSManaged public var isFavorite: Bool
     @NSManaged public var itemName: String?
 

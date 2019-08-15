@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ItemInfoView" customModule="Klozet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpD-Rt-Dwp">
+                    <rect key="frame" x="12" y="52" width="390" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-8E-OMX">
+                    <rect key="frame" x="0.0" y="90" width="414" height="414"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Gw7-8E-OMX" secondAttribute="height" multiplier="1:1" id="7yp-WW-gdu"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2EY-Ra-Al1">
+                    <rect key="frame" x="12" y="512" width="390" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EhT-st-vHk">
+                    <rect key="frame" x="12" y="550" width="390" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWw-8k-PR4">
+                    <rect key="frame" x="12" y="824" width="390" height="30"/>
+                    <state key="normal" title="Delete item"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Gw7-8E-OMX" firstAttribute="top" secondItem="jpD-Rt-Dwp" secondAttribute="bottom" constant="8" id="34s-pk-eMg"/>
+                <constraint firstItem="EhT-st-vHk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="3Mt-0K-L5U"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VWw-8k-PR4" secondAttribute="trailing" constant="12" id="65c-64-j9a"/>
+                <constraint firstItem="jpD-Rt-Dwp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="LT3-Aq-I7g"/>
+                <constraint firstItem="2EY-Ra-Al1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="S4U-27-pS3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2EY-Ra-Al1" secondAttribute="trailing" constant="12" id="Trs-We-j3v"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EhT-st-vHk" secondAttribute="trailing" constant="12" id="ZU1-SJ-ZrI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jpD-Rt-Dwp" secondAttribute="trailing" constant="12" id="b3c-Ff-h0z"/>
+                <constraint firstItem="jpD-Rt-Dwp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="bhU-va-IaW"/>
+                <constraint firstItem="EhT-st-vHk" firstAttribute="top" secondItem="2EY-Ra-Al1" secondAttribute="bottom" constant="8" id="eFV-qJ-MTZ"/>
+                <constraint firstItem="VWw-8k-PR4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="f0Y-NB-bjz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VWw-8k-PR4" secondAttribute="bottom" constant="8" id="h49-g7-VEL"/>
+                <constraint firstItem="2EY-Ra-Al1" firstAttribute="top" secondItem="Gw7-8E-OMX" secondAttribute="bottom" constant="8" id="j9e-UN-kQw"/>
+                <constraint firstItem="Gw7-8E-OMX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="k0G-LC-j5E"/>
+                <constraint firstItem="Gw7-8E-OMX" firstAttribute="width" secondItem="Gw7-8E-OMX" secondAttribute="height" multiplier="1:1" id="n39-9C-r8P"/>
+                <constraint firstItem="VWw-8k-PR4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EhT-st-vHk" secondAttribute="bottom" constant="8" id="wu7-Xx-9oM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gw7-8E-OMX" secondAttribute="trailing" id="yny-J8-r2w"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="deleteItemButton" destination="VWw-8k-PR4" id="sae-kE-QCp"/>
+                <outlet property="favorateButton" destination="jpD-Rt-Dwp" id="dJl-lf-w6R"/>
+                <outlet property="itemCategoryTextField" destination="EhT-st-vHk" id="QqQ-M7-WvW"/>
+                <outlet property="itemImageView" destination="Gw7-8E-OMX" id="nP0-ud-O5B"/>
+                <outlet property="itemNameTextField" destination="2EY-Ra-Al1" id="Si3-OC-dJ5"/>
+            </connections>
+        </view>
+    </objects>
+</document>

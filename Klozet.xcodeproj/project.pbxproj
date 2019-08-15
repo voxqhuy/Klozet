@@ -25,6 +25,9 @@
 		C9A08D8D2305AA480010304E /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D8B2305AA480010304E /* Item+CoreDataClass.swift */; };
 		C9A08D8E2305AA480010304E /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D8C2305AA480010304E /* Item+CoreDataProperties.swift */; };
 		C9A08D912305AB7C0010304E /* MyCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D902305AB7C0010304E /* MyCoreData.swift */; };
+		C9A08D932305EA990010304E /* UIViewController+presentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D922305EA990010304E /* UIViewController+presentAlert.swift */; };
+		C9A08D95230605200010304E /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D94230605200010304E /* ItemInfoView.swift */; };
+		C9A08D972306052D0010304E /* ItemInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A08D962306052D0010304E /* ItemInfoView.xib */; };
 		C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */; };
 		C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206523045BFC002AB296 /* ItemCategory.swift */; };
 		C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */; };
@@ -99,6 +102,9 @@
 		C9A08D8B2305AA480010304E /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9A08D8C2305AA480010304E /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9A08D902305AB7C0010304E /* MyCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoreData.swift; sourceTree = "<group>"; };
+		C9A08D922305EA990010304E /* UIViewController+presentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+presentAlert.swift"; sourceTree = "<group>"; };
+		C9A08D94230605200010304E /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
+		C9A08D962306052D0010304E /* ItemInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemInfoView.xib; sourceTree = "<group>"; };
 		C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemCollectionViewController+addItem.swift"; sourceTree = "<group>"; };
 		C9CC206523045BFC002AB296 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -232,6 +238,8 @@
 			children = (
 				C972880822F8718B00890E71 /* GridCollectionViewCell.swift */,
 				C972880922F8718B00890E71 /* GridCollectionViewCell.xib */,
+				C9A08D94230605200010304E /* ItemInfoView.swift */,
+				C9A08D962306052D0010304E /* ItemInfoView.xib */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -418,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */,
+				C9A08D922305EA990010304E /* UIViewController+presentAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -587,6 +596,7 @@
 				DE69C04F22F622B20009A3A6 /* CategoryCollectionViewCell.xib in Resources */,
 				DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */,
 				DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */,
+				C9A08D972306052D0010304E /* ItemInfoView.xib in Resources */,
 				C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */,
 				C9CC206C2304BF41002AB296 /* GoogleService-Info.plist in Resources */,
 				C96DEE7622F37C6E007A28DD /* Assets.xcassets in Resources */,
@@ -702,8 +712,10 @@
 				C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */,
 				DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */,
 				C9A08D8A2305A4E50010304E /* NetworkingHandlers.swift in Sources */,
+				C9A08D932305EA990010304E /* UIViewController+presentAlert.swift in Sources */,
 				C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */,
 				DE69C07C22F7DD260009A3A6 /* AccessibilityId.swift in Sources */,
+				C9A08D95230605200010304E /* ItemInfoView.swift in Sources */,
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
 				C972880A22F8718B00890E71 /* GridCollectionViewCell.swift in Sources */,
 				C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */,

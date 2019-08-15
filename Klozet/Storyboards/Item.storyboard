@@ -61,11 +61,30 @@
                     </collectionView>
                     <connections>
                         <segue destination="dMZ-mh-iUh" kind="show" identifier="showItemEdit" id="eJ5-Mm-DK2"/>
+                        <segue destination="PsG-KB-4rc" kind="show" id="TKI-bm-jjd"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IH-BC-PKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1730" y="21"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aYc-aK-22M">
+            <objects>
+                <viewController id="PsG-KB-4rc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k9Q-dy-gP2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="42K-uC-Ywh"/>
+                    </view>
+                    <connections>
+                        <segue destination="dMZ-mh-iUh" kind="show" id="bjQ-Jg-GTC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48n-Zh-OvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2612" y="564"/>
         </scene>
         <!--Item Edit View Controller-->
         <scene sceneID="Sew-rW-LPe">
@@ -133,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awK-EB-7Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3643" y="21"/>
+            <point key="canvasLocation" x="3513" y="37"/>
         </scene>
         <!--Item-->
         <scene sceneID="yWO-kb-F31">
@@ -159,4 +178,7 @@
     <resources>
         <image name="itemIcon" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bjQ-Jg-GTC"/>
+    </inferredMetricsTieBreakers>
 </document>

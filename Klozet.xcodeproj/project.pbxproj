@@ -33,6 +33,7 @@
 		C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */; };
 		C9CC206C2304BF41002AB296 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9CC206B2304BF41002AB296 /* GoogleService-Info.plist */; };
 		C9CC206E2304C16A002AB296 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206D2304C16A002AB296 /* FirestoreService.swift */; };
+		C9FD915C230709F9005CA0F5 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD915B230709F9005CA0F5 /* ItemService.swift */; };
 		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
 		DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04522F61FC40009A3A6 /* Item.storyboard */; };
 		DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */; };
@@ -110,6 +111,7 @@
 		C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C9CC206B2304BF41002AB296 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9CC206D2304C16A002AB296 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		C9FD915B230709F9005CA0F5 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
 		D8ED71B26F6F8B2C02B993B0 /* Pods-Klozet-KlozetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klozet-KlozetTests.release.xcconfig"; path = "Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE69C04522F61FC40009A3A6 /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
@@ -159,20 +161,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C94AF30A23030B9E00D505D3 /* ItemInfo */ = {
+		C94AF30A23030B9E00D505D3 /* Item Info */ = {
 			isa = PBXGroup;
 			children = (
 				C94AF30B23030BC300D505D3 /* ItemInfoViewController.swift */,
 			);
-			path = ItemInfo;
+			path = "Item Info";
 			sourceTree = "<group>";
 		};
-		C94AF30D2303556000D505D3 /* ItemEdit */ = {
+		C94AF30D2303556000D505D3 /* Item Edit */ = {
 			isa = PBXGroup;
 			children = (
 				C94AF30E2303558400D505D3 /* ItemEditViewController.swift */,
 			);
-			path = ItemEdit;
+			path = "Item Edit";
 			sourceTree = "<group>";
 		};
 		C96DEE5F22F37C68007A28DD = {
@@ -325,14 +327,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		C9FD91572306F7BB005CA0F5 /* Item Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */,
+				C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */,
+			);
+			path = "Item Collection";
+			sourceTree = "<group>";
+		};
+		C9FD915823070934005CA0F5 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				C9FD915B230709F9005CA0F5 /* ItemService.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		DE69C04922F6221E0009A3A6 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				C94AF30D2303556000D505D3 /* ItemEdit */,
-				C94AF30A23030B9E00D505D3 /* ItemInfo */,
+				C9FD91572306F7BB005CA0F5 /* Item Collection */,
+				C94AF30D2303556000D505D3 /* Item Edit */,
+				C94AF30A23030B9E00D505D3 /* Item Info */,
 				DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */,
-				DE69C05622F682F40009A3A6 /* ItemCollectionViewController.swift */,
-				C9A832132301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -416,6 +434,7 @@
 		DE69C06F22F7D0C10009A3A6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				C9FD915823070934005CA0F5 /* Item */,
 				C9CC206D2304C16A002AB296 /* FirestoreService.swift */,
 				C9A08D892305A4E50010304E /* NetworkingHandlers.swift */,
 			);
@@ -718,6 +737,7 @@
 				C9A08D95230605200010304E /* ItemInfoView.swift in Sources */,
 				C96DEE6E22F37C68007A28DD /* HomeViewController.swift in Sources */,
 				C972880A22F8718B00890E71 /* GridCollectionViewCell.swift in Sources */,
+				C9FD915C230709F9005CA0F5 /* ItemService.swift in Sources */,
 				C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,

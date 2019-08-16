@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 private let cellNibName = "GridCollectionViewCell"
 private let reuseIdentifier = "GridCell"
@@ -13,14 +14,17 @@ private let showItemEditSegueId = "showItemEdit"
 
 class ItemCollectionViewController: UICollectionViewController {
 
-    var categoryIndex: Int?
+    var categoryName: String?
     
-    private var myData = MyData()
+    private lazy var myCoreData = MyCoreData(modelName: "Klozet")
+    private var fetchedResultsController: NSFetchedResultsController<Item>!
+//    private var managedContext: NSManagedObjectContext!
+    private var items = [Item]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = myData.itemCategories[categoryIndex!].categoryName
+        navigationItem.title = categoryName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add item", style: .plain, target: self, action: #selector(addItemButtonTapped(_:)))
     }
     
@@ -33,7 +37,31 @@ class ItemCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
+        fetchItems()
+    }
+    
+    private func fetchItems() {
+//        let myCoreData = MyCoreData(modelName: "Klozet")
+//        managedContext = myCoreData.managedContext
+        addFetchRequestToFetchedResultsController()
+        performFetch()
+    }
+    
+    private func addFetchRequestToFetchedResultsController() {
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: myCoreData.managedContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+    }
+    
+    private func performFetch() {
+        do {
+            try fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print("Fetching error: \(error), \(error.userInfo)")
+        }
     }
     
     // MARK: Interaction
@@ -54,28 +82,33 @@ class ItemCollectionViewController: UICollectionViewController {
         }
     }
     
-    private func setupBackButton() {
+    private func setupBackButton()
+    {
         let backItem = UIBarButtonItem()
         backItem.title = "Cancel"
         navigationItem.backBarButtonItem = backItem
     }
     
 
-    // MARK: UICollectionViewDataSource
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+    // MARK: - Collection View
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        guard let itemSectionInfo = fetchedResultsController.sections?[section] else {
+            return 0
+        }
+        
+        return itemSectionInfo.numberOfObjects
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
+        
+        let item = fetchedResultsController.object(at: indexPath)
+        cell.itemImageView = item.
     
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -93,6 +126,7 @@ class ItemCollectionViewController: UICollectionViewController {
 
 }
 
+//MARK: - Image Picker Delegate
 extension ItemCollectionViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

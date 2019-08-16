@@ -40,10 +40,10 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
         if segue.identifier == showItemCollectionSegueId {
             let itemCollectionVC = segue.destination as! ItemCollectionViewController
             
-            guard let sender = sender as? Int else {
+            guard let sender = sender as? String else {
                 return
             }
-            itemCollectionVC.categoryIndex = sender
+            itemCollectionVC.categoryName = categoryName
         }
     }
 }
@@ -78,7 +78,8 @@ extension ItemCategoryCollectionViewController {
 
 extension ItemCategoryCollectionViewController: CellSelectDelegate {
     func didSelect(atRow row: Int) {
-        performSegue(withIdentifier: showItemCollectionSegueId, sender: row)
+        let categoryName = myData.itemCategories[row].categoryName
+        performSegue(withIdentifier: showItemCollectionSegueId, sender: categoryName)
     }
 }
 

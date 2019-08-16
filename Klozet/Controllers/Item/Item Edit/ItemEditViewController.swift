@@ -20,8 +20,8 @@ class ItemEditViewController: UIViewController {
     
     private var itemCategories: [ItemCategory]?
     private lazy var service = FirestoreService()
+    private var imagePath: String!
     
-    private lazy var myCoreData = MyCoreData(modelName: "Klozet")
     private var managedContext: NSManagedObjectContext!
     private let coreDataEntity = "Item"
     
@@ -115,12 +115,15 @@ class ItemEditViewController: UIViewController {
         if inputIsInvalid {
             presentAlert(forCase: .invalidItemInput)
         } else {
-            saveItem()
+            saveItemToCoreData()
+            saveItemToFirebase()
         }
     }
     
     private func saveItem() {
         let selectedCategory = categoryTextField.text!
+        
+        
         
         service.uploadImageAndGetPath(for: itemImageView.image!, withCategory: selectedCategory) {
             [weak self] (uploadResult) in
@@ -132,6 +135,7 @@ class ItemEditViewController: UIViewController {
                 self.presentAlert(forCase: .failToUploadItemImage)
                 
             case let .success(imagePath):
+                self.imagePath = imagePath
                 self.saveItemToCoreData(with: imagePath)
             }
         }
@@ -144,15 +148,30 @@ class ItemEditViewController: UIViewController {
             categoryTextField.text?.isEmpty ?? true
     }
     
-    private func saveItemToCoreData(with imagePath: String) {
+    private func saveItemToCoreData() {
+        let myCoreData = MyCoreData(modelName: "Klozet")
+        managedContext = myCoreData.managedContext
+        
+        assignPropertiesToItem()
+        
+        myCoreData.saveContext()
+        //try! managedContext.save()
+    }
+    
+    private func assignPropertiesToItem() {
         let item = NSEntityDescription.insertNewObject(forEntityName: coreDataEntity, into: managedContext) as! Item
         item.itemName = nameTextField.text
         item.category = categoryTextField.text
         item.isFavorite = false // TODO make favorite button
         item.imagePath = imagePath
-        
-        try! managedContext.save()
     }
+    
+    private func saveItemToFirebase() {
+        // TODO
+        // save
+    }
+    
+    
 }
 
 

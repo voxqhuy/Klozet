@@ -32,6 +32,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="130" height="114"/>
+            <connections>
+                <outlet property="itemImageView" destination="QyS-1C-0M4" id="0q2-eA-UaF"/>
+            </connections>
             <point key="canvasLocation" x="189.85507246376812" y="174.77678571428569"/>
         </collectionViewCell>
     </objects>

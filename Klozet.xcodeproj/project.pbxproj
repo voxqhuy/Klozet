@@ -206,7 +206,7 @@
 				C9D819C622F38930006F98FF /* Common */,
 				DE69C07122F7D0CD0009A3A6 /* Models */,
 				C9D819CD22F389A6006F98FF /* Views */,
-				C9D819CE22F389AA006F98FF /* Controllers */,
+				C9D819CE22F389AA006F98FF /* Application */,
 				C9D819CF22F389C6006F98FF /* Storyboards */,
 				C9D819D022F389F2006F98FF /* Project Files */,
 			);
@@ -287,14 +287,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C9D819CE22F389AA006F98FF /* Controllers */ = {
+		C9D819CE22F389AA006F98FF /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				DE69C04B22F6222E0009A3A6 /* Outfit */,
 				DE69C04A22F622260009A3A6 /* Home */,
 				DE69C04922F6221E0009A3A6 /* Item */,
 			);
-			path = Controllers;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		C9D819CF22F389C6006F98FF /* Storyboards */ = {
@@ -648,9 +648,20 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Klozet/Pods-Klozet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Klozet/Pods-Klozet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Klozet/Pods-Klozet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -709,9 +720,20 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

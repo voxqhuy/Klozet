@@ -41,8 +41,6 @@ class ItemCollectionViewController: UICollectionViewController {
     }
     
     private func fetchItems() {
-//        let myCoreData = MyCoreData(modelName: "Klozet")
-//        managedContext = myCoreData.managedContext
         addFetchRequestToFetchedResultsController()
         performFetch()
     }
@@ -71,8 +69,6 @@ class ItemCollectionViewController: UICollectionViewController {
 
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         setupBackButton()
         
@@ -109,22 +105,8 @@ class ItemCollectionViewController: UICollectionViewController {
     
         return cell
     }
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
 }
+
 
 //MARK: - Image Picker Delegate
 extension ItemCollectionViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {

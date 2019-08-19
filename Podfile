@@ -6,6 +6,7 @@ target 'Klozet' do
 
   pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
 
   target 'KlozetTests' do
     #inherit! :search_paths

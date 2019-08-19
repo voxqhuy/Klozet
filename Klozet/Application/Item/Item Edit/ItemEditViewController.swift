@@ -10,7 +10,8 @@ import CoreData
 
 class ItemEditViewController: UIViewController {
     // MARK: Variables
-    internal var newItemImage: UIImage?
+    internal var newItemImage: UIImage? = nil
+    internal var editingItemId: UUID? = nil
     
     private var itemView: ItemInfoView!
     private var favoriteButton: UIButton!
@@ -20,7 +21,7 @@ class ItemEditViewController: UIViewController {
     private var deleteItemButton: UIButton!
     
     private var itemCategories: [ItemCategory]?
-    private var worker: ItemEditWorker!
+//    private var worker: ItemEditWorker!
     private var imagePath: String!
     
     
@@ -119,20 +120,10 @@ class ItemEditViewController: UIViewController {
                       isFavorite: false,
                       image: itemImageView.image!)
         
-        worker = ItemEditWorker(itemModel: itemModel)
-        worker.saveItemToCoreData { (saveCoreDataResult) in
-            switch saveCoreDataResult {
-            case let .failure(errorString):
-                // TODO make a case
-                print(errorString)
-                presentAlert(forCase: .failToUploadItemImage)
-                return
-            case .success: break
-            }
-        }
-        
-        worker.saveItemToFirebase()
-        
+        let worker = ItemEditWorker(itemModel: itemModel)
+        worker?.createItem(completion: { (<#SaveItemResult#>) in
+            <#code#>
+        })
     }
 }
 
@@ -163,10 +154,5 @@ extension ItemEditViewController {
     private var inputIsInvalid: Bool {
         return nameTextField.text?.isEmpty ?? true ||
             categoryTextField.text?.isEmpty ?? true
-    }
-    
-    private func saveItemToFirebase() {
-        // TODO
-        // save
     }
 }

@@ -14,13 +14,15 @@ private let showItemEditSegueId = "showItemEdit"
 
 class ItemCollectionViewController: UICollectionViewController {
 
-    var categoryName: String?
+    internal var categoryName: String?
     
     private lazy var myCoreData = MyCoreData(modelName: "Klozet")
     private var fetchedResultsController: NSFetchedResultsController<Item>!
-//    private var managedContext: NSManagedObjectContext!
+    
     private var items = [Item]()
     
+    
+    // MARK: View cycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -62,13 +64,14 @@ class ItemCollectionViewController: UICollectionViewController {
         }
     }
     
+    
     // MARK: Interaction
     @objc private func addItemButtonTapped(_ sender: UIBarButtonItem) {
         promptUserToAddItem(on: sender)
     }
 
     
-    // MARK: - Navigation
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         setupBackButton()
         
@@ -84,9 +87,12 @@ class ItemCollectionViewController: UICollectionViewController {
         backItem.title = "Cancel"
         navigationItem.backBarButtonItem = backItem
     }
-    
+}
 
-    // MARK: - Collection View
+
+// MARK: - Collection View
+extension ItemCollectionViewController {
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         guard let itemSectionInfo = fetchedResultsController.sections?[section] else {
@@ -95,14 +101,14 @@ class ItemCollectionViewController: UICollectionViewController {
         
         return itemSectionInfo.numberOfObjects
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
         
         let item = fetchedResultsController.object(at: indexPath)
-        cell.itemImageView = item.
-    
+        //        cell.itemImageView = item. TODO
+        
         return cell
     }
 }

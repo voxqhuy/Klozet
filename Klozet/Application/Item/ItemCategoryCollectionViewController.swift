@@ -43,7 +43,7 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
             guard let sender = sender as? String else {
                 return
             }
-            itemCollectionVC.categoryName = categoryName
+            itemCollectionVC.categoryName = sender
         }
     }
 }

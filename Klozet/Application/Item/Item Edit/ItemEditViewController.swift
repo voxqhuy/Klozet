@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class ItemEditViewController: UIViewController {
+    // MARK: Variables
     internal var newItemImage: UIImage?
     
     private var itemView: ItemInfoView!
@@ -19,12 +20,11 @@ class ItemEditViewController: UIViewController {
     private var deleteItemButton: UIButton!
     
     private var itemCategories: [ItemCategory]?
-    private lazy var service = FirestoreService()
+    private var worker: ItemEditWorker!
     private var imagePath: String!
     
-    private var managedContext: NSManagedObjectContext!
-    private let coreDataEntity = "Item"
     
+    // MARK: - View cycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -100,81 +100,44 @@ class ItemEditViewController: UIViewController {
         categoryTextField.inputAccessoryView = toolBar
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: - Interaction
     @objc private func saveButtonTapped() {
         if inputIsInvalid {
             presentAlert(forCase: .invalidItemInput)
         } else {
-            saveItemToCoreData()
-            saveItemToFirebase()
+            saveItem()
+            // TODO then go back
+            
         }
     }
     
     private func saveItem() {
-        let selectedCategory = categoryTextField.text!
+        let itemModel =
+            ItemModel(name: nameTextField.text!,
+                      category: categoryTextField.text!,
+                      isFavorite: false,
+                      image: itemImageView.image!)
         
-        
-        
-        service.uploadImageAndGetPath(for: itemImageView.image!, withCategory: selectedCategory) {
-            [weak self] (uploadResult) in
-            guard let self = self else { return }
-            
-            switch uploadResult {
+        worker = ItemEditWorker(itemModel: itemModel)
+        worker.saveItemToCoreData { (saveCoreDataResult) in
+            switch saveCoreDataResult {
             case let .failure(errorString):
+                // TODO make a case
                 print(errorString)
-                self.presentAlert(forCase: .failToUploadItemImage)
-                
-            case let .success(imagePath):
-                self.imagePath = imagePath
-                self.saveItemToCoreData(with: imagePath)
+                presentAlert(forCase: .failToUploadItemImage)
+                return
+            case .success: break
             }
         }
-    }
-    
-    
-    // MARK: - Helpers
-    private var inputIsInvalid: Bool {
-        return nameTextField.text?.isEmpty ?? true ||
-            categoryTextField.text?.isEmpty ?? true
-    }
-    
-    private func saveItemToCoreData() {
-        let myCoreData = MyCoreData(modelName: "Klozet")
-        managedContext = myCoreData.managedContext
         
-        assignPropertiesToItem()
+        worker.saveItemToFirebase()
         
-        myCoreData.saveContext()
-        //try! managedContext.save()
     }
-    
-    private func assignPropertiesToItem() {
-        let item = NSEntityDescription.insertNewObject(forEntityName: coreDataEntity, into: managedContext) as! Item
-        item.itemName = nameTextField.text
-        item.category = categoryTextField.text
-        item.isFavorite = false // TODO make favorite button
-        item.imagePath = imagePath
-    }
-    
-    private func saveItemToFirebase() {
-        // TODO
-        // save
-    }
-    
-    
 }
 
 
+// MARK: - Picker View
 extension ItemEditViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -191,5 +154,19 @@ extension ItemEditViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedCategory = itemCategories![row].categoryName
         categoryTextField.text = selectedCategory
+    }
+}
+
+
+// MARK: - Helpers
+extension ItemEditViewController {
+    private var inputIsInvalid: Bool {
+        return nameTextField.text?.isEmpty ?? true ||
+            categoryTextField.text?.isEmpty ?? true
+    }
+    
+    private func saveItemToFirebase() {
+        // TODO
+        // save
     }
 }

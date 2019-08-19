@@ -7,6 +7,22 @@
 
 import Foundation
 
+enum CacheResult {
+    case failure(String)
+    case success(URL)
+}
+
+typealias CacheHandler = (CacheResult) -> Void
+
+
+enum SaveCoreDataResult {
+    case failure(String)
+    case success
+}
+
+typealias SaveCoreDataHandler = (SaveCoreDataResult) -> Void
+
+
 enum UploadStorageResult {
     case failure(String)
     case success(String)

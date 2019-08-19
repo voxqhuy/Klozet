@@ -18,7 +18,7 @@ struct ItemService {
     let itemModel: ItemModel
     
     init(itemModel: ItemModel) {
-1self.itemModel = itemModel
+        self.itemModel = itemModel
     }
     
     private func saveItemToCoreData() {

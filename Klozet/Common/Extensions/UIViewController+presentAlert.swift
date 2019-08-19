@@ -30,7 +30,7 @@ extension UIAlertController {
 extension UIViewController {
     func presentAlert(forCase alertCase: AlertCase, handler: ((UIAlertAction) -> Void)? = nil) {
         
-        let ac = getAlertController(forCase: alertCase)
+        let ac = alertController(forCase: alertCase)
         ac.addActions(forCase: alertCase, handler: handler)
         
         ac.view.accessibilityIdentifier = alertCase.description
@@ -44,7 +44,7 @@ extension UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
-    private func getAlertController(forCase alertCase: AlertCase) -> UIAlertController {
+    private func alertController(forCase alertCase: AlertCase) -> UIAlertController {
         let ac: UIAlertController
         
         switch alertCase {

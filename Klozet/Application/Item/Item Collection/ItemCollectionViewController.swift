@@ -14,13 +14,15 @@ private let showItemEditSegueId = "showItemEdit"
 
 class ItemCollectionViewController: UICollectionViewController {
 
-    var categoryName: String?
+    internal var categoryName: String?
     
     private lazy var myCoreData = MyCoreData(modelName: "Klozet")
     private var fetchedResultsController: NSFetchedResultsController<Item>!
-//    private var managedContext: NSManagedObjectContext!
+    
     private var items = [Item]()
     
+    
+    // MARK: View cycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -41,8 +43,6 @@ class ItemCollectionViewController: UICollectionViewController {
     }
     
     private func fetchItems() {
-//        let myCoreData = MyCoreData(modelName: "Klozet")
-//        managedContext = myCoreData.managedContext
         addFetchRequestToFetchedResultsController()
         performFetch()
     }
@@ -64,15 +64,14 @@ class ItemCollectionViewController: UICollectionViewController {
         }
     }
     
+    
     // MARK: Interaction
     @objc private func addItemButtonTapped(_ sender: UIBarButtonItem) {
         promptUserToAddItem(on: sender)
     }
 
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         setupBackButton()
         
@@ -88,9 +87,12 @@ class ItemCollectionViewController: UICollectionViewController {
         backItem.title = "Cancel"
         navigationItem.backBarButtonItem = backItem
     }
-    
+}
 
-    // MARK: - Collection View
+
+// MARK: - Collection View
+extension ItemCollectionViewController {
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         guard let itemSectionInfo = fetchedResultsController.sections?[section] else {
@@ -99,32 +101,18 @@ class ItemCollectionViewController: UICollectionViewController {
         
         return itemSectionInfo.numberOfObjects
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
         
         let item = fetchedResultsController.object(at: indexPath)
-        cell.itemImageView = item.
-    
+        //        cell.itemImageView = item. TODO
+        
         return cell
     }
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
 }
+
 
 //MARK: - Image Picker Delegate
 extension ItemCollectionViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {

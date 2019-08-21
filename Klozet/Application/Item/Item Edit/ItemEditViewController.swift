@@ -21,7 +21,7 @@ class ItemEditViewController: UIViewController {
     private var deleteItemButton: UIButton!
     
     private var itemCategories: [ItemCategory]?
-//    private var worker: ItemEditWorker!
+    private var worker: ItemEditWorker!
     private var imagePath: String!
     
     
@@ -107,23 +107,44 @@ class ItemEditViewController: UIViewController {
         if inputIsInvalid {
             presentAlert(forCase: .invalidItemInput)
         } else {
-            saveItem()
+            initializeWorker()
+            saveItemAndGoBack()
             // TODO then go back
-            
         }
     }
     
-    private func saveItem() {
+    private func initializeWorker() {
         let itemModel =
             ItemModel(name: nameTextField.text!,
                       category: categoryTextField.text!,
                       isFavorite: false,
                       image: itemImageView.image!)
         
-        let worker = ItemEditWorker(itemModel: itemModel)
-        worker?.createItem(completion: { (<#SaveItemResult#>) in
-            <#code#>
+        worker = ItemEditWorker(itemModel: itemModel)
+    }
+    
+    private func saveItemAndGoBack() {
+        if editingItemId == nil {
+            createNewItemAndGoBack()
+        } else {
+            updateItemEditAndGoBack()
+        }
+    }
+    
+    private func createNewItemAndGoBack() {
+        worker?.createItem(completion: { (createResult) in
+            switch createResult {
+            case let .failure(error):
+                // TODO handle cases or change type to ItemError and have a description
+                print(error)
+            case .success:
+                self.navigationController?.popViewController(animated: true)
+            }
         })
+    }
+    
+    private func updateItemEditAndGoBack() {
+        worke
     }
 }
 

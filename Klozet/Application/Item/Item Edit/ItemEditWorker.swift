@@ -16,13 +16,6 @@ struct ItemModel {
     let image: UIImage
 }
 
-enum SaveItemResult {
-    case failure(String)
-    case success
-}
-
-typealias SaveItemHandler = (SaveItemResult) -> Void
-
 class ItemEditWorker {
     let itemModel: ItemModel!
     private let itemId: String
@@ -48,99 +41,68 @@ class ItemEditWorker {
         managedContext = myCoreData.managedContext
     }
     
-    func createItem(completion: @escaping SaveItemHandler) {
-        var didInsertToCoreData = false
-        var newItem = Item()
-        
-        insertItemToCoreData { (insertResult) in
-            switch insertResult {
-            case let .failure(errorString):
-                completion(.failure(errorString))
-            case let .success(insertedItem):
-                newItem = insertedItem
-                didInsertToCoreData = true
-            }
-        }
-        
-        if didInsertToCoreData {
-            createItemOnFirebase { [weak self] (createResult) in
-                guard let self = self else { return }
+    func createItem(completion: @escaping CreateItemHandler)
+    {
+        createItemOnFirebase { [weak self] (createResult) in
+            guard let self = self else { return }
+            
+            switch createResult {
+            case let .failure(error):
+                completion(.failure(error))
                 
-                switch createResult {
-                case let .failure(errorString):
-                    // fail to save item, delete it from Core Data
-                    self.deleteItemFromCoreData(newItem)
-                    completion(.failure(errorString))
-                    
-                case .success:
+            case .success:
+                do {
+                    // successfully create on firebase, now Core Data
+                    let imageUrl = try self.cacheImageAndReturnUrl()
+                    self.insertItem(withImageUrl: imageUrl)
                     completion(.success)
+                } catch {
+                    completion(.failure(error as! ItemError))
                 }
             }
         }
     }
     
-    func updateItem() {
-        var didUpdateInCoreData = false
-        
-        insertItemToCoreData { (insertResult) in
-            switch insertResult {
-            case let .failure(errorString):
-                completion(.failure(errorString))
-            case let .success(insertedItem):
-                newItem = insertedItem
-                didInsertToCoreData = true
-            }
-        }
-        
-        if didInsertToCoreData {
-            createItemOnFirebase { [weak self] (createResult) in
-                guard let self = self else { return }
+    func updateItem(completion: @escaping UpdateItemHandler)
+    {
+        updateItemOnFirebase { [weak self] (createResult) in
+            guard let self = self else { return }
+            
+            switch createResult {
+            case let .failure(error):
+                completion(.failure(error))
                 
-                switch createResult {
-                case let .failure(errorString):
-                    // fail to save item, delete it from Core Data
-                    self.deleteItemFromCoreData(newItem)
-                    completion(.failure(errorString))
-                    
-                case .success:
+            case .success:
+                do {
+                    // successfully update on firebase, now Core Data
+                    try self.updateItemOnCoreData()
                     completion(.success)
+                } catch {
+                    completion(.failure(error as! ItemError))
                 }
             }
         }
     }
 }
 
-
-// Mark: - Core Data
+// MARK: - File Manager
 extension ItemEditWorker {
-    // MARK: Insert
-    private func insertItemToCoreData(completion: InsertCoreDataHandler)
-    {
-        cacheImage { (cacheResult) in
-            switch cacheResult {
-            case let .failure(errorString):
-                completion(.failure(errorString))
-            case let .success(imageUrl):
-                let insertedItem = insertItemAndReturn(into: managedContext, withImageUrl: imageUrl)
-                completion(.success(insertedItem))
-            }
-        }
-        
-        myCoreData.saveContext()
-    }
-    
-    private func cacheImage(completion: CacheHandler)
+    private func cacheImageAndReturnUrl() throws -> URL
     {
         let imageUrl = FileManagerUtil().cachingURL(forKey: "Item.\(itemId)")
         do {
             try imageData.write(to: imageUrl)
-            completion(.success(imageUrl))
+            return imageUrl
         } catch {
-            completion(.failure("Cannot cache the image"))
+            throw ItemError.failToCacheImage
         }
     }
-    
-    private func insertItemAndReturn(into managedContext: NSManagedObjectContext, withImageUrl imageUrl: URL) -> Item
+}
+
+// Mark: - Core Data
+extension ItemEditWorker {
+    // INSERT
+    private func insertItem(withImageUrl imageUrl: URL)
     {
         let item = NSEntityDescription.insertNewObject(forEntityName: coreDataEntity, into: managedContext) as! Item
         item.itemId = itemId
@@ -148,24 +110,26 @@ extension ItemEditWorker {
         item.category = itemModel.category
         item.isFavorite = itemModel.isFavorite // TODO make favorite button
         item.imageUrl = imageUrl
-        return item
+        
+        myCoreData.saveContext()
     }
     
-    // MARK: Fetch
+    // FETCH
     private func itemFromCoreData() throws -> Item {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "itemId == %@", itemId)
         
         do {
             let items = try managedContext.fetch(fetchRequest)
             return items.first!
-        } catch let error as NSError {
-            throw error
+        } catch {
+            throw ItemError.failToFetchItemFromCoreData
         }
     }
     
     
-    // MARK: Update
-    private func updateItemInCoreData() throws {
+    // UPDATE
+    private func updateItemOnCoreData() throws {
         do {
             let editingItem = try itemFromCoreData()
             editingItem.itemName = itemModel.name
@@ -173,40 +137,24 @@ extension ItemEditWorker {
             editingItem.isFavorite = itemModel.isFavorite
             
             myCoreData.saveContext()
-        } catch let error as NSError {
+        } catch {
             throw error
         }
     }
     
     // MARK: Delete
-    private func deleteItemFromCoreData(_ item: Item) {
-        managedContext.delete(item)
-        
-        myCoreData.saveContext()
-    }
+//    private func deleteItemFromCoreData(_ item: Item)
+//    {
+//        managedContext.delete(item)
+//        myCoreData.saveContext()
+//    }
 }
 
 
 // MARK: - Firebase
 extension ItemEditWorker {
-    private func createItemOnFirebase(completion: @escaping SaveItemHandler)
-    {
-        uploadImageAndGetUrl { [weak self] (uploadImageResult) in
-            guard let self = self else { return }
-            
-            switch uploadImageResult
-            {
-            case let .failure(errorString):
-                completion(.failure(errorString))
-                
-            case let .success(imageUrl):
-                // successfully uploaded the image and got url, now upload the item
-                self.setItemOnFirebase(withImageUrl: imageUrl) { completion($0) }
-            }
-        }
-    }
-    
-    private func uploadImageAndGetUrl(completion: @escaping UploadStorageHandler)
+    // Firebase Storage
+    private func createItemOnFirebase(completion: @escaping CreateItemHandler)
     {
         // Setup firebse storage to upload image
         let uploadRef = Storage.storage().reference(withPath: firebasePath)
@@ -214,18 +162,22 @@ extension ItemEditWorker {
         uploadMetadata.contentType = "image/jpeg"
         
         // Start uploading
-        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+        uploadRef.putData(imageData, metadata: uploadMetadata) { [weak self] (downloadMetadata, error) in
+            guard let self = self else { return }
+            
             if let error = error {
-                completion(.failure("voxError. Fail to upload image. Description: \(error.localizedDescription)"))
-                print()
+                completion(.failure(ItemError.failToUploadImageOnFirebase(error.localizedDescription)))
             } else {
-                completion(.success(downloadMetadata!.name!))
+                let imageUrl = downloadMetadata!.name!
+                // successfully uploaded the image and got url, now upload the item
+                self.setItemOnFirebase(withImageUrl: imageUrl) { completion($0) }
             }
         }
     }
     
-    private func setItemOnFirebase(withImageUrl imageUrl: String, completion: @escaping SaveItemHandler) {
-        
+    // SET
+    private func setItemOnFirebase(withImageUrl imageUrl: String, completion: @escaping CreateItemHandler)
+    {
         firestoreUtil.item(withId: itemId).setData([
             "name": itemModel.name,
             "category": itemModel.category,
@@ -233,7 +185,23 @@ extension ItemEditWorker {
             "imageUrl": imageUrl
         ]) { err in
             if let err = err {
-                completion(.failure("ERR saving item \(err)"))
+                completion(.failure(ItemError.failToSetItemOnFirebase(err.localizedDescription)))
+            } else {
+                completion(.success)
+            }
+        }
+    }
+    
+    // UPDATE
+    private func updateItemOnFirebase(completion: @escaping UpdateItemHandler)
+    {
+        firestoreUtil.item(withId: itemId).updateData([
+            "name": itemModel.name,
+            "category": itemModel.category,
+            "isFavorite": itemModel.isFavorite
+        ]) { err in
+            if let err = err {
+                completion(.failure(ItemError.failToSetItemOnFirebase(err.localizedDescription)))
             } else {
                 completion(.success)
             }

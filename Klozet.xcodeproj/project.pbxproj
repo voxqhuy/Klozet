@@ -10,6 +10,7 @@
 		7C0792CCB3C91F1854CF38BC /* Pods_Klozet_KlozetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489F391C30A32F69C67F7E1E /* Pods_Klozet_KlozetTests.framework */; };
 		C93A012C22F48C7900797820 /* Outfit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93A012B22F48C7900797820 /* Outfit.storyboard */; };
 		C93A012E22F48DC200797820 /* OutfitCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */; };
+		C942B99D230D8FFD00E74C7F /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942B99C230D8FFD00E74C7F /* MyError.swift */; };
 		C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF30B23030BC300D505D3 /* ItemInfoViewController.swift */; };
 		C94AF30F2303558400D505D3 /* ItemEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AF30E2303558400D505D3 /* ItemEditViewController.swift */; };
 		C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96DEE6B22F37C68007A28DD /* AppDelegate.swift */; };
@@ -32,7 +33,6 @@
 		C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206523045BFC002AB296 /* ItemCategory.swift */; };
 		C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */; };
 		C9CC206C2304BF41002AB296 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9CC206B2304BF41002AB296 /* GoogleService-Info.plist */; };
-		C9CC206E2304C16A002AB296 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206D2304C16A002AB296 /* FirestoreService.swift */; };
 		D48900898A123920022FF41A /* Pods_Klozet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC190D2084CE7DD22943B47 /* Pods_Klozet.framework */; };
 		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
 		DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04522F61FC40009A3A6 /* Item.storyboard */; };
@@ -85,6 +85,7 @@
 		6E4F42DEBA18893905A642F8 /* Pods-Klozet-KlozetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klozet-KlozetTests.release.xcconfig"; path = "Target Support Files/Pods-Klozet-KlozetTests/Pods-Klozet-KlozetTests.release.xcconfig"; sourceTree = "<group>"; };
 		C93A012B22F48C7900797820 /* Outfit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Outfit.storyboard; sourceTree = "<group>"; };
 		C93A012D22F48DC200797820 /* OutfitCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		C942B99C230D8FFD00E74C7F /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		C94AF30B23030BC300D505D3 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
 		C94AF30E2303558400D505D3 /* ItemEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditViewController.swift; sourceTree = "<group>"; };
 		C96DEE6822F37C68007A28DD /* Klozet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klozet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +114,6 @@
 		C9CC206523045BFC002AB296 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C9CC206B2304BF41002AB296 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C9CC206D2304C16A002AB296 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE69C04522F61FC40009A3A6 /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
 		DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryCollectionViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +392,7 @@
 				DE69C06722F7A9BE0009A3A6 /* MyData.swift */,
 				DE69C07B22F7DD260009A3A6 /* AccessibilityId.swift */,
 				C9A08D902305AB7C0010304E /* MyCoreData.swift */,
+				C942B99C230D8FFD00E74C7F /* MyError.swift */,
 			);
 			path = "My Classes";
 			sourceTree = "<group>";
@@ -442,7 +443,6 @@
 		DE69C06F22F7D0C10009A3A6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C9CC206D2304C16A002AB296 /* FirestoreService.swift */,
 				C9A08D892305A4E50010304E /* WorkerHandlers.swift */,
 			);
 			path = Networking;
@@ -725,7 +725,6 @@
 			files = (
 				C9A08D8E2305AA480010304E /* Item+CoreDataProperties.swift in Sources */,
 				DE69C05322F6564B0009A3A6 /* MyString.swift in Sources */,
-				C9CC206E2304C16A002AB296 /* FirestoreService.swift in Sources */,
 				C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */,
 				DEC73CCF230A315000831B0C /* CategoryCollectionViewCell.swift in Sources */,
 				DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */,
@@ -741,6 +740,7 @@
 				C9B6EC0D230B160A00499D27 /* FirestoreUtil.swift in Sources */,
 				C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
+				C942B99D230D8FFD00E74C7F /* MyError.swift in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
 				DE69C06222F79D450009A3A6 /* CellSelectDelegate.swift in Sources */,
 				C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */,

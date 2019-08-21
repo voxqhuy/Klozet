@@ -7,36 +7,24 @@
 
 import Foundation
 
-
-// MARK: - File Manager
-enum CacheResult {
-    case failure(String)
-    case success(URL)
-}
-
-typealias CacheHandler = (CacheResult) -> Void
-
-
-// MARK: - Core Data
-enum InsertCoreDataResult {
-    case failure(String)
-    case success(Item)
-}
-
-typealias InsertCoreDataHandler = (InsertCoreDataResult) -> Void
-
-
-// MARK: - Firebase
-enum SetFirebaseResult {
-    case failure(String)
+// MARK: - Item
+enum CreateItemResult {
+    case failure(ItemError)
     case success
 }
 
-typealias SetFirebaseHandler = (SetFirebaseResult) -> Void
+typealias CreateItemHandler = (CreateItemResult) -> Void
 
-enum UploadStorageResult {
-    case failure(String)
-    case success(String)
+enum UpdateItemResult {
+    case failure(ItemError)
+    case success
 }
 
-typealias UploadStorageHandler = (UploadStorageResult) -> Void
+typealias UpdateItemHandler = (UpdateItemResult) -> Void
+
+
+// MARK: - File Manager
+
+// MARK: - Core Data
+
+// MARK: - Firebase

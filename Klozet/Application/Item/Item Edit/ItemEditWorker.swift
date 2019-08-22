@@ -57,7 +57,7 @@ class ItemEditWorker {
                     self.insertItem(withImageUrl: imageUrl)
                     completion(.success)
                 } catch {
-                    completion(.failure(error as! ItemError))
+                    completion(.failure(error as! MyError))
                 }
             }
         }
@@ -78,7 +78,7 @@ class ItemEditWorker {
                     try self.updateItemOnCoreData()
                     completion(.success)
                 } catch {
-                    completion(.failure(error as! ItemError))
+                    completion(.failure(error as! MyError))
                 }
             }
         }
@@ -94,7 +94,7 @@ extension ItemEditWorker {
             try imageData.write(to: imageUrl)
             return imageUrl
         } catch {
-            throw ItemError.failToCacheImage
+            throw MyError.failToCacheImage
         }
     }
 }
@@ -123,7 +123,7 @@ extension ItemEditWorker {
             let items = try managedContext.fetch(fetchRequest)
             return items.first!
         } catch {
-            throw ItemError.failToFetchItemFromCoreData
+            throw MyError.failToFetchItemFromCoreData
         }
     }
     
@@ -166,7 +166,7 @@ extension ItemEditWorker {
             guard let self = self else { return }
             
             if let error = error {
-                completion(.failure(ItemError.failToUploadImageOnFirebase(error.localizedDescription)))
+                completion(.failure(MyError.failToUploadImageOnFirebase(error.localizedDescription)))
             } else {
                 let imageUrl = downloadMetadata!.name!
                 // successfully uploaded the image and got url, now upload the item
@@ -185,7 +185,7 @@ extension ItemEditWorker {
             "imageUrl": imageUrl
         ]) { err in
             if let err = err {
-                completion(.failure(ItemError.failToSetItemOnFirebase(err.localizedDescription)))
+                completion(.failure(MyError.failToCreateItemOnFirebase(err.localizedDescription)))
             } else {
                 completion(.success)
             }
@@ -201,7 +201,7 @@ extension ItemEditWorker {
             "isFavorite": itemModel.isFavorite
         ]) { err in
             if let err = err {
-                completion(.failure(ItemError.failToSetItemOnFirebase(err.localizedDescription)))
+                completion(.failure(MyError.failToUpdateItemOnFirebase(err.localizedDescription)))
             } else {
                 completion(.success)
             }

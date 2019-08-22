@@ -9,14 +9,14 @@ import Foundation
 
 // MARK: - Item
 enum CreateItemResult {
-    case failure(ItemError)
+    case failure(MyError)
     case success
 }
 
 typealias CreateItemHandler = (CreateItemResult) -> Void
 
 enum UpdateItemResult {
-    case failure(ItemError)
+    case failure(MyError)
     case success
 }
 

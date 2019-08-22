@@ -2,33 +2,15 @@
 //  UIViewController+presentAlert.swift
 //  Klozet
 //
-//  Created by Developers on 8/15/19.
+//  Created by Huy Vo on 8/15/19.
 //
 
 import UIKit
 
-enum AlertCase {
-    case invalidItemInput
-    
-    case failToUploadItemImage
-    
-    var description: String {
-        return String(describing: self)
-    }
-}
-
-extension UIAlertController {
-    func addActions(forCase alertCase: AlertCase, handler: ((UIAlertAction) -> Void)?) {
-        switch alertCase {
-        case .invalidItemInput,
-             .failToUploadItemImage:
-            addAction(UIAlertAction(title: "Okay", style: .default, handler: handler))
-        }
-    }
-}
 
 extension UIViewController {
-    func presentAlert(forCase alertCase: AlertCase, handler: ((UIAlertAction) -> Void)? = nil) {
+    func presentAlert(for alertCase: MyAlert, handler: ((UIAlertAction) -> Void)?) {
+        print(alertCase.description)
         
         let ac = alertController(forCase: alertCase)
         ac.addActions(forCase: alertCase, handler: handler)
@@ -44,16 +26,62 @@ extension UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
-    private func alertController(forCase alertCase: AlertCase) -> UIAlertController {
+    private func alertController(forCase alertCase: MyAlert) -> UIAlertController {
         let ac: UIAlertController
         
-        switch alertCase {
-        case .invalidItemInput:
-            ac = UIAlertController(title: "Oops!", message: "Please make sure the item has a name and a category", preferredStyle: .alert)
-        case .failToUploadItemImage:
-            ac = UIAlertController(title: "Cannot save this image", message: "Fail to save this item image. Please try again later", preferredStyle: .alert)
+        switch alertCase
+        {
+        case let .validation(status):
+            switch status
+            {
+            case .invalidItemInput:
+                ac = UIAlertController(title: "Oops!", message: "Please make sure the item has a name and a category", preferredStyle: .alert)
+            }
+            
+        case let .error(error):
+            switch error
+            {
+            case .failToCacheImage:
+                ac = UIAlertController(title: "Cannot save this image", message: "Fail to save this item image. Please try again later", preferredStyle: .alert)
+                
+            case .failToFetchItemFromCoreData:
+                ac = UIAlertController(title: "Cannot load this item", message: "Fail to load this item. Please try again later", preferredStyle: .alert)
+                
+            case.failToCreateItemOnFirebase,
+                .failToUploadImageOnFirebase:
+                ac = UIAlertController(title: "Cannot create this item", message: "Fail to create this item. Please check your internet connection and try again later", preferredStyle: .alert)
+                
+            case .failToUpdateItemOnFirebase:
+                ac = UIAlertController(title: "Cannot save edits this item", message: "Fail to save edits for this item. Please check your internet connection and try again later", preferredStyle: .alert)
+            }
         }
-        
         return ac
+    }
+}
+
+extension UIAlertController {
+    func addActions(forCase alertCase: MyAlert, handler: ((UIAlertAction) -> Void)?)
+    {
+        switch alertCase
+        {
+        case let .validation(status):
+            switch status
+            {
+            case .invalidItemInput:
+                addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                
+            }
+            
+        case let .error(error):
+            switch error
+            {
+            case .failToCacheImage,
+                 .failToFetchItemFromCoreData,
+                 .failToCreateItemOnFirebase,
+                 .failToUpdateItemOnFirebase,
+                 .failToUploadImageOnFirebase:
+                addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            }
+        }
     }
 }

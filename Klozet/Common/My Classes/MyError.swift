@@ -7,29 +7,28 @@
 
 import Foundation
 
-enum ItemError: Error {
+enum MyError: Error {
+    // NOTE: if this enum gets long, divide it by grouping into category cases
+    // E.g: case item(Item);    case outfit(Outfit)
     case failToFetchItemFromCoreData
     case failToCacheImage
     
     case failToUploadImageOnFirebase(String)
-    case failToSetItemOnFirebase(String)
+    case failToCreateItemOnFirebase(String)
     case failToUpdateItemOnFirebase(String)
 }
 
-extension ItemError: CustomStringConvertible {
+extension MyError: CustomStringConvertible {
     var description: String {
+        var errorDescription = "voxError. \(self) "
         switch self {
-        case .failToFetchItemFromCoreData:
-            return "voxError. Fail to Fetch Item from Core Data."
-        case .failToCacheImage:
-            return "voxError. Fail to Cache Image."
-        case let .failToUploadImageOnFirebase(errorString):
-            return "voxError. Fail to Upload Image on Firebase. \(errorString)"
-        case let .failToSetItemOnFirebase(errorString):
-            return "voxError. Fail to Set Item on Firebase. \(errorString)"
-        case let .failToUpdateItemOnFirebase(errorString):
-            return "voxError. Fail to Update Item on Firebase. \(errorString)"
+        case let .failToUploadImageOnFirebase(errorString),
+             let .failToCreateItemOnFirebase(errorString),
+             let .failToUpdateItemOnFirebase(errorString):
+            errorDescription += errorString
+        default:
+            break
         }
-        
+        return errorDescription
     }
 }

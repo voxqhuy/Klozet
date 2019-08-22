@@ -14,7 +14,7 @@ private let showItemEditSegueId = "showItemEdit"
 
 class ItemCollectionViewController: UICollectionViewController {
 
-    internal var categoryName: String?
+    internal var categoryIndex: Int?
     
     private lazy var myCoreData = MyCoreData(modelName: "Klozet")
     private var fetchedResultsController: NSFetchedResultsController<Item>!
@@ -26,7 +26,7 @@ class ItemCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = categoryName
+        navigationItem.title = MyData().itemCategories[categoryIndex!].categoryName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add item", style: .plain, target: self, action: #selector(addItemButtonTapped(_:)))
     }
     
@@ -49,6 +49,8 @@ class ItemCollectionViewController: UICollectionViewController {
     
     private func addFetchRequestToFetchedResultsController() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Item.itemName), ascending: true)]
+        
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: myCoreData.managedContext,
@@ -77,7 +79,8 @@ class ItemCollectionViewController: UICollectionViewController {
         
         if segue.identifier == showItemEditSegueId {
             let itemEditVC = segue.destination as! ItemEditViewController
-            itemEditVC.newItemImage = sender as? UIImage
+            
+            itemEditVC.newItemData = NewItem(categoryIndex: categoryIndex!, image: sender as! UIImage)
         }
     }
     
@@ -121,8 +124,6 @@ extension ItemCollectionViewController: UIImagePickerControllerDelegate & UINavi
         picker.dismiss(animated: true)
         
         guard let image = info[.editedImage] as? UIImage else { return }
-        print("image selected \(image)")
-        // TODO perform segue to show Item Edit
         performSegue(withIdentifier: showItemEditSegueId, sender: image)
     }
 }

@@ -8,9 +8,14 @@
 import UIKit
 import CoreData
 
+struct NewItem {
+    let categoryIndex: Int
+    let image: UIImage
+}
+
 class ItemEditViewController: UIViewController {
     // MARK: Variables
-    internal var newItemImage: UIImage? = nil
+    internal var newItemData: NewItem? = nil
     internal var editingItemId: UUID? = nil
     
     private var itemView: ItemInfoView!
@@ -20,7 +25,7 @@ class ItemEditViewController: UIViewController {
     private var categoryTextField: UITextField!
     private var deleteItemButton: UIButton!
     
-    private var itemCategories: [ItemCategory]?
+    private var itemCategories: [ItemCategory] = MyData().itemCategories
     private var worker: ItemEditWorker!
     private var imagePath: String!
     
@@ -46,7 +51,7 @@ class ItemEditViewController: UIViewController {
         setupUI()
         hideKeyboardWhenTappedAround()
         
-        itemCategories = MyData().itemCategories
+//        itemCategories = MyData().itemCategories
     }
     
     private func setupMainView() {
@@ -71,21 +76,26 @@ class ItemEditViewController: UIViewController {
     }
     
     private func setupUI() {
-        assignImageIfAddingItem()
+        assignDataIfAddingItem()
         
         createCategoryPickerView()
         addChooseButton()
     }
     
-    private func assignImageIfAddingItem() {
-        if newItemImage != nil {
-            itemImageView.image = newItemImage
+    private func assignDataIfAddingItem() {
+        if let data = newItemData {
+            itemImageView.image = data.image
+            categoryTextField.text = itemCategories[data.categoryIndex].categoryName
         }
     }
     
     private func createCategoryPickerView() {
         let pickerView = UIPickerView()
         pickerView.delegate = self
+        
+        if let selectedCategoryIndex = newItemData?.categoryIndex {
+            pickerView.selectRow(selectedCategoryIndex, inComponent: 0, animated: true)
+        }
         
         categoryTextField.inputView = pickerView
     }
@@ -105,7 +115,7 @@ class ItemEditViewController: UIViewController {
     // MARK: - Interaction
     @objc private func saveButtonTapped() {
         if inputIsInvalid {
-            presentAlert(forCase: .invalidItemInput)
+            presentAlert(for: .validation(.invalidItemInput), handler: nil)
         } else {
             initializeWorker()
             saveItemAndGoBack()
@@ -131,20 +141,34 @@ class ItemEditViewController: UIViewController {
         }
     }
     
-    private func createNewItemAndGoBack() {
-        worker?.createItem(completion: { (createResult) in
+    private func createNewItemAndGoBack()
+    {
+        worker?.createItem { [weak self] (createResult) in
+            guard let self = self else { return }
+            
             switch createResult {
             case let .failure(error):
-                // TODO handle cases or change type to ItemError and have a description
-                print(error)
+                self.presentAlert(for: .error(error), handler: nil)
+                
             case .success:
                 self.navigationController?.popViewController(animated: true)
             }
-        })
+        }
     }
     
-    private func updateItemEditAndGoBack() {
-        worke
+    private func updateItemEditAndGoBack()
+    {
+        worker.updateItem { [weak self] (updateResult) in
+            guard let self = self else { return }
+            
+            switch updateResult {
+            case let .failure(error):
+                self.presentAlert(for: .error(error), handler: nil)
+                
+            case .success:
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 }
 
@@ -156,15 +180,15 @@ extension ItemEditViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return itemCategories!.count
+        return itemCategories.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return itemCategories![row].categoryName
+        return itemCategories[row].categoryName
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedCategory = itemCategories![row].categoryName
+        let selectedCategory = itemCategories[row].categoryName
         categoryTextField.text = selectedCategory
     }
 }

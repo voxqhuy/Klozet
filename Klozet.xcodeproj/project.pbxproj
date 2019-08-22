@@ -21,6 +21,8 @@
 		C96DEE7922F37C6E007A28DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96DEE7722F37C6E007A28DD /* LaunchScreen.storyboard */; };
 		C972880A22F8718B00890E71 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C972880822F8718B00890E71 /* GridCollectionViewCell.swift */; };
 		C972880B22F8718B00890E71 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C972880922F8718B00890E71 /* GridCollectionViewCell.xib */; };
+		C986411A230EEC91005FF8FF /* MyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9864119230EEC91005FF8FF /* MyAlert.swift */; };
+		C986411C230EF19A005FF8FF /* OtherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986411B230EF19A005FF8FF /* OtherEnums.swift */; };
 		C9A08D8A2305A4E50010304E /* WorkerHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D892305A4E50010304E /* WorkerHandlers.swift */; };
 		C9A08D8D2305AA480010304E /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D8B2305AA480010304E /* Item+CoreDataClass.swift */; };
 		C9A08D8E2305AA480010304E /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A08D8C2305AA480010304E /* Item+CoreDataProperties.swift */; };
@@ -102,6 +104,8 @@
 		C96DEE9022F37C6E007A28DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C972880822F8718B00890E71 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		C972880922F8718B00890E71 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
+		C9864119230EEC91005FF8FF /* MyAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlert.swift; sourceTree = "<group>"; };
+		C986411B230EF19A005FF8FF /* OtherEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherEnums.swift; sourceTree = "<group>"; };
 		C9A08D892305A4E50010304E /* WorkerHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerHandlers.swift; sourceTree = "<group>"; };
 		C9A08D8B2305AA480010304E /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9A08D8C2305AA480010304E /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -278,7 +282,7 @@
 				C9D819C722F38936006F98FF /* Constants */,
 				DE69C05B22F7668B0009A3A6 /* My Classes */,
 				DE69C07022F7D0C70009A3A6 /* Extensions */,
-				DE69C06F22F7D0C10009A3A6 /* Networking */,
+				DE69C06F22F7D0C10009A3A6 /* Miscs */,
 				DE69C06022F79D090009A3A6 /* Utilities */,
 			);
 			path = Common;
@@ -393,6 +397,7 @@
 				DE69C07B22F7DD260009A3A6 /* AccessibilityId.swift */,
 				C9A08D902305AB7C0010304E /* MyCoreData.swift */,
 				C942B99C230D8FFD00E74C7F /* MyError.swift */,
+				C9864119230EEC91005FF8FF /* MyAlert.swift */,
 			);
 			path = "My Classes";
 			sourceTree = "<group>";
@@ -440,12 +445,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DE69C06F22F7D0C10009A3A6 /* Networking */ = {
+		DE69C06F22F7D0C10009A3A6 /* Miscs */ = {
 			isa = PBXGroup;
 			children = (
 				C9A08D892305A4E50010304E /* WorkerHandlers.swift */,
+				C986411B230EF19A005FF8FF /* OtherEnums.swift */,
 			);
-			path = Networking;
+			path = Miscs;
 			sourceTree = "<group>";
 		};
 		DE69C07022F7D0C70009A3A6 /* Extensions */ = {
@@ -739,10 +745,12 @@
 				C972880A22F8718B00890E71 /* GridCollectionViewCell.swift in Sources */,
 				C9B6EC0D230B160A00499D27 /* FirestoreUtil.swift in Sources */,
 				C9A832142301EFEE005FAFBF /* ItemCollectionViewController+addItem.swift in Sources */,
+				C986411A230EEC91005FF8FF /* MyAlert.swift in Sources */,
 				C96DEE7422F37C68007A28DD /* Klozet.xcdatamodeld in Sources */,
 				C942B99D230D8FFD00E74C7F /* MyError.swift in Sources */,
 				C96DEE6C22F37C68007A28DD /* AppDelegate.swift in Sources */,
 				DE69C06222F79D450009A3A6 /* CellSelectDelegate.swift in Sources */,
+				C986411C230EF19A005FF8FF /* OtherEnums.swift in Sources */,
 				C9CC206623045BFC002AB296 /* ItemCategory.swift in Sources */,
 				DE69C05522F656A50009A3A6 /* MyColor.swift in Sources */,
 				C94AF30F2303558400D505D3 /* ItemEditViewController.swift in Sources */,

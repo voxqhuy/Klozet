@@ -97,6 +97,10 @@ extension ItemEditWorker {
             throw MyError.failToCacheImage
         }
     }
+    
+    private func imageFromCache(url: URL) -> UIImage {
+        
+    }
 }
 
 // Mark: - Core Data

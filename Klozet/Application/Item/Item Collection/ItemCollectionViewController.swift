@@ -16,7 +16,7 @@ class ItemCollectionViewController: UICollectionViewController {
 
     internal var categoryIndex: Int?
     
-    private lazy var myCoreData = MyCoreData(modelName: "Klozet")
+    private lazy var worker = ItemCollectionWorker()
     private var fetchedResultsController: NSFetchedResultsController<Item>!
     
     private var items = [Item]()
@@ -37,28 +37,15 @@ class ItemCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        let nib = UINib(nibName: cellNibName, bundle: nil)
+        collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
 
         fetchItems()
     }
     
     private func fetchItems() {
-        addFetchRequestToFetchedResultsController()
-        performFetch()
-    }
-    
-    private func addFetchRequestToFetchedResultsController() {
-        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Item.itemName), ascending: true)]
+        fetchedResultsController = worker.fetchedResultsController
         
-        fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
-            managedObjectContext: myCoreData.managedContext,
-            sectionNameKeyPath: nil,
-            cacheName: nil)
-    }
-    
-    private func performFetch() {
         do {
             try fetchedResultsController.performFetch()
         } catch let error as NSError {
@@ -110,7 +97,7 @@ extension ItemCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
         
         let item = fetchedResultsController.object(at: indexPath)
-        //        cell.itemImageView = item. TODO
+        cell.itemImageView = item.imageUrl
         
         return cell
     }

@@ -5,11 +5,17 @@
 //  Created by Developers on 8/22/19.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 struct ItemCollectionWorker
 {
+//    private let itemId: String
+//    
+//    init(itemId: String) {
+//        self.itemId = itemId
+//    }
+    
     var fetchedResultsController: NSFetchedResultsController<Item> {
         let myCoreData = MyCoreData(modelName: "Klozet")
         
@@ -23,5 +29,13 @@ struct ItemCollectionWorker
             cacheName: nil)
     }
     
-    
+    func imageFromCache(url: URL) -> UIImage?
+    {
+        if let data = NSData(contentsOf: url) {
+            do {
+                return try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data as Data) as? UIImage
+            }
+            catch {}
+        }
+    }
 }

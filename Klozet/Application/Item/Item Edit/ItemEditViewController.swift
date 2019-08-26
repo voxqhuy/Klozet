@@ -119,7 +119,6 @@ class ItemEditViewController: UIViewController {
         } else {
             initializeWorker()
             saveItemAndGoBack()
-            // TODO then go back
         }
     }
     

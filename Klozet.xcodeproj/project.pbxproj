@@ -38,6 +38,8 @@
 		C9CC206823049DBA002AB296 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */; };
 		C9CC206C2304BF41002AB296 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9CC206B2304BF41002AB296 /* GoogleService-Info.plist */; };
 		D48900898A123920022FF41A /* Pods_Klozet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC190D2084CE7DD22943B47 /* Pods_Klozet.framework */; };
+		DE013C5723132DB800D94351 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE013C5523132DB800D94351 /* CategoryHeaderView.swift */; };
+		DE013C5823132DB800D94351 /* CategoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE013C5623132DB800D94351 /* CategoryHeaderView.xib */; };
 		DE69C04422F618D90009A3A6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04322F618D90009A3A6 /* Home.storyboard */; };
 		DE69C04622F61FC40009A3A6 /* Item.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE69C04522F61FC40009A3A6 /* Item.storyboard */; };
 		DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */; };
@@ -122,6 +124,8 @@
 		C9CC206523045BFC002AB296 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		C9CC206723049DBA002AB296 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C9CC206B2304BF41002AB296 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE013C5523132DB800D94351 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
+		DE013C5623132DB800D94351 /* CategoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryHeaderView.xib; sourceTree = "<group>"; };
 		DE69C04322F618D90009A3A6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE69C04522F61FC40009A3A6 /* Item.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Item.storyboard; sourceTree = "<group>"; };
 		DE69C04722F622140009A3A6 /* ItemCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryCollectionViewController.swift; sourceTree = "<group>"; };
@@ -257,19 +261,6 @@
 			path = KlozetUITests;
 			sourceTree = "<group>";
 		};
-		C972880722F8712E00890E71 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				DEC73CCD230A315000831B0C /* CategoryCollectionViewCell.swift */,
-				DEC73CCE230A315000831B0C /* CategoryCollectionViewCell.xib */,
-				C972880822F8718B00890E71 /* GridCollectionViewCell.swift */,
-				C972880922F8718B00890E71 /* GridCollectionViewCell.xib */,
-				C9A08D94230605200010304E /* ItemInfoView.swift */,
-				C9A08D962306052D0010304E /* ItemInfoView.xib */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		C986411F230F5063005FF8FF /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +304,9 @@
 		C9D819CD22F389A6006F98FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C972880722F8712E00890E71 /* Shared */,
+				DEADA14D231381BE009D12CA /* Item */,
+				DEADA14C231381A1009D12CA /* Collection Views */,
+				DE013C5423132D1B00D94351 /* Header Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +359,15 @@
 				C986411D230F4C3C005FF8FF /* ItemCollectionWorker.swift */,
 			);
 			path = "Item Collection";
+			sourceTree = "<group>";
+		};
+		DE013C5423132D1B00D94351 /* Header Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE013C5523132DB800D94351 /* CategoryHeaderView.swift */,
+				DE013C5623132DB800D94351 /* CategoryHeaderView.xib */,
+			);
+			path = "Header Views";
 			sourceTree = "<group>";
 		};
 		DE69C04922F6221E0009A3A6 /* Item */ = {
@@ -510,6 +512,26 @@
 			path = TestUtilities;
 			sourceTree = "<group>";
 		};
+		DEADA14C231381A1009D12CA /* Collection Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEC73CCD230A315000831B0C /* CategoryCollectionViewCell.swift */,
+				DEC73CCE230A315000831B0C /* CategoryCollectionViewCell.xib */,
+				C972880822F8718B00890E71 /* GridCollectionViewCell.swift */,
+				C972880922F8718B00890E71 /* GridCollectionViewCell.xib */,
+			);
+			path = "Collection Views";
+			sourceTree = "<group>";
+		};
+		DEADA14D231381BE009D12CA /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				C9A08D94230605200010304E /* ItemInfoView.swift */,
+				C9A08D962306052D0010304E /* ItemInfoView.xib */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		F13C87CEC61F1A4F26013D16 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +659,7 @@
 				DEC73CD0230A315000831B0C /* CategoryCollectionViewCell.xib in Resources */,
 				C9CC206C2304BF41002AB296 /* GoogleService-Info.plist in Resources */,
 				C96DEE7622F37C6E007A28DD /* Assets.xcassets in Resources */,
+				DE013C5823132DB800D94351 /* CategoryHeaderView.xib in Resources */,
 				C96DEE7122F37C68007A28DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +771,7 @@
 				C94AF30C23030BC300D505D3 /* ItemInfoViewController.swift in Sources */,
 				C9864121230F5079005FF8FF /* Cachable.swift in Sources */,
 				DEC73CCF230A315000831B0C /* CategoryCollectionViewCell.swift in Sources */,
+				DE013C5723132DB800D94351 /* CategoryHeaderView.swift in Sources */,
 				DE69C04822F622140009A3A6 /* ItemCategoryCollectionViewController.swift in Sources */,
 				C9A08D8A2305A4E50010304E /* WorkerHandlers.swift in Sources */,
 				C9A08D932305EA990010304E /* UIViewController+presentAlert.swift in Sources */,

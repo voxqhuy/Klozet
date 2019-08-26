@@ -97,8 +97,7 @@ extension ItemCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
         
         let item = fetchedResultsController.object(at: indexPath)
-        
-        worker.imageFromCache(url: item.imageUrl)
+        cell.itemImageView.image = worker.imageFromCache(url: item.imageUrl)
         
         return cell
     }

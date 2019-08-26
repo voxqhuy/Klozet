@@ -32,7 +32,10 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
     
     private func registerCell() {
         let nib = UINib(nibName: cellNibName, bundle: nil)
-        collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        // TODO fix this lol
+        let headerNib = UINib(nibName: "CategoryHeaderView", bundle: nil)
+        collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CategoryHeader")
     }
 
     // MARK: - Navigation
@@ -52,6 +55,35 @@ class ItemCategoryCollectionViewController: UICollectionViewController {
 extension ItemCategoryCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        var v: UICollectionReusableView != nil
+        
+//        if let kind = UICollectionView.elementKindSectionHeader
+//        {
+//            v = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ItemCategoryHeader", for: indexPath)
+//
+//            if v.subviews.count == 0 {
+//                v.addSubview(UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 30)))
+//            }
+//
+//            let label = v.subviews[0] as! UILabel
+//        }
+        // add header title only for "Accessories"
+        
+        if let categoryHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CategoryHeader", for: indexPath) as? CategoryHeaderView
+        {
+            if indexPath.section == 0 {
+                categoryHeaderView.headerLabel.removeFromSuperview()
+            } else {
+                categoryHeaderView.headerLabel.text = "Accessories"
+            }
+            
+            return categoryHeaderView
+        }
+        return UICollectionReusableView()
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -83,7 +115,18 @@ extension ItemCategoryCollectionViewController: CellSelectDelegate {
 }
 
 
-extension ItemCategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension ItemCategoryCollectionViewController: UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+    {
+        if section == 0 {
+            return CGSize(width: 0, height: 0)
+        } else {
+            return CGSize(width: 30, height: 12)
+        }
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
     }

@@ -57,21 +57,8 @@ extension ItemCategoryCollectionViewController {
         return 2
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        var v: UICollectionReusableView != nil
-        
-//        if let kind = UICollectionView.elementKindSectionHeader
-//        {
-//            v = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ItemCategoryHeader", for: indexPath)
-//
-//            if v.subviews.count == 0 {
-//                v.addSubview(UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 30)))
-//            }
-//
-//            let label = v.subviews[0] as! UILabel
-//        }
-        // add header title only for "Accessories"
-        
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
+    {
         if let categoryHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CategoryHeader", for: indexPath) as? CategoryHeaderView
         {
             if indexPath.section == 0 {

@@ -29,16 +29,17 @@ struct ItemCollectionWorker
             cacheName: nil)
     }
     
-    func imageFromCache(url: URL?) -> UIImage?
-    {
-        guard let url = url else { return nil }
-        if let data = NSData(contentsOf: url) {
-            do {
-                return try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data as Data) as? UIImage
-            }
-            catch { return nil }
-        } else {
-            return nil
-        }
-    }
+//    func imageFromCache(url: URL?) -> UIImage?
+//    {
+//        guard let url = url else { return nil }
+////        if let data = Data(contentsOf: url) {
+//            do {
+//                let data = try Data(contentsOf: url)
+//                return try NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data)
+//            }
+//            catch { return nil }
+////        } else {
+////            return nil
+////        }
+//    }
 }

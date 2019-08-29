@@ -26,7 +26,7 @@ class ItemEditWorker {
     
     private let coreDataEntity = "Item"
     private var firebasePath: String {
-        return "voxqhuy/Items/\(itemModel.category)/\(itemId).jpg"
+        return "voxqhuy/Items/\(itemId).jpg"
     }
     
     init?(itemModel: ItemModel, itemId: String? = nil)

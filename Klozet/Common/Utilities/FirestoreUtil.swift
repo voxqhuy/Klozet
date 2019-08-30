@@ -19,7 +19,7 @@ class FirestoreUtil {
         return itemCollection().document(itemId)
     }
     
-    func storagePath(forItemId itemId: String) {
+    func storagePath(forItemId itemId: String) -> String {
         return "voxqhuy/Items/\(itemId).jpg"
     }
 }

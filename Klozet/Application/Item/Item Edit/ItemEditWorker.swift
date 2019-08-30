@@ -169,6 +169,7 @@ extension ItemEditWorker {
                 completion(.failure(MyError.failToUploadImageOnFirebase(error.localizedDescription)))
             } else {
                 let imageUrl = downloadMetadata!.name!
+                print(downloadMetadata)
                 // successfully uploaded the image and got url, now upload the item
                 self.setItemOnFirebase(withImageUrl: imageUrl) { completion($0) }
             }

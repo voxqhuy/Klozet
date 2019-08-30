@@ -37,59 +37,45 @@ struct ItemCollectionWorker
             cacheName: nil)
     }
     
-    internal func imageForItem(_ item: Item) -> UIImage? {
-        if let image = UIImage(contentsOfFile: item.imageUrl?.path ?? "") {
-            return image
-        } else {
-            let image = imageFromFirebase(forItemId: item.itemId)
-            cacheNewImage(for: item)
-        }
-    }
-    
-    private func imageFromFirebase(forItemId itemId: String, completion: @escaping FetchImageFirebaseHandler) {
-        FirestoreUtil().item(withId: itemId).getDocument { [weak self] (document, error) in
-            guard let self = self else { return }
-            
-            if let document = document, document.exists {
-//                let
-                let imageUrl = document.data()!["imageUrl"] as! String
-                // TODO
-                // TODO imageFromFirebaseStorage
-            } else {
-                completion(.failure)
-                print("Document does not exist")
-            }
-        }
-    }
-    
-    private func imageFromFirebaseStorage(completion: @escaping FetchImageFirebaseHandler) {
-        let imageRef = Storage.reference("url")
-    
-        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-        if let error = error {
-        // Uh-oh, an error occurred!
-        } else {
-        // Data for "images/island.jpg" is returned
-        let image = UIImage(data: data!)
-        }
-        }
-    }
+//    internal func imageForItem(_ item: Item) -> UIImage? {
+//        if let image = UIImage(contentsOfFile: item.imageUrl?.path ?? "") {
+//            return image
+//        } else {
+//            let image = imageFromFirebase(forItemId: item.itemId)
+//            cacheNewImage(for: item)
+//        }
+//    }
+//    
+//    private func imageFromFirebase(forItemId itemId: String, completion: @escaping FetchImageFirebaseHandler) {
+//        FirestoreUtil().item(withId: itemId).getDocument { [weak self] (document, error) in
+//            guard let self = self else { return }
+//            
+//            if let document = document, document.exists {
+////                let
+//                let imageUrl = document.data()!["imageUrl"] as! String
+//                // TODO
+//                // TODO imageFromFirebaseStorage
+//            } else {
+//                completion(.failure)
+//                print("Document does not exist")
+//            }
+//        }
+//    }
+//    
+//    private func imageFromFirebaseStorage(completion: @escaping FetchImageFirebaseHandler) {
+//        let imageRef = Storage.reference("url")
+//    
+//        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//        if let error = error {
+//        // Uh-oh, an error occurred!
+//        } else {
+//        // Data for "images/island.jpg" is returned
+//        let image = UIImage(data: data!)
+//        }
+//        }
+//    }
     
     private func cacheNewImage(for item: Item) {
         // caches directory? or documents, maybe documents
     }
-    
-//    func imageFromCache(url: URL?) -> UIImage?
-//    {
-//        guard let url = url else { return nil }
-////        if let data = Data(contentsOf: url) {
-//            do {
-//                let data = try Data(contentsOf: url)
-//                return try NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data)
-//            }
-//            catch { return nil }
-////        } else {
-////            return nil
-////        }
-//    }
 }

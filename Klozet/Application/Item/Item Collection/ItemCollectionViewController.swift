@@ -48,6 +48,7 @@ class ItemCollectionViewController: UICollectionViewController {
         
         do {
             try fetchedResultsController.performFetch()
+//            collectionView.reloadData()
         } catch let error as NSError {
             print("Fetching error: \(error), \(error.userInfo)")
         }
@@ -97,9 +98,21 @@ extension ItemCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
         
         let item = fetchedResultsController.object(at: indexPath)
-        cell.itemImageView.image = worker.imageFromCache(url: item.imageUrl)
+//        cell.itemImageView.image = worker.imageForItem(item)
+        
+//        cell.itemImageView.image = worker.imageFromCache(url: item.imageUrl)
+//        cell.itemImageView.image = UIImage(contentsOfFile: item.imageUrl?.path ?? "")
+//        print(UIImage(contentsOfFile: item.imageUrl?.path ?? ""))
         
         return cell
+    }
+}
+
+extension ItemCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let itemWidth = view.frame.width / 3
+        return CGSize(width: itemWidth, height: itemWidth)
     }
 }
 

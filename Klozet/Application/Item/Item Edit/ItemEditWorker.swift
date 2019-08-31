@@ -26,7 +26,7 @@ class ItemEditWorker {
     
     private let coreDataEntity = "Item"
     private var firebasePath: String {
-        return "voxqhuy/Items/\(itemModel.category)/\(itemId).jpg"
+        return "voxqhuy/Items/\(itemId).jpg"
     }
     
     init?(itemModel: ItemModel, itemId: String? = nil)
@@ -169,6 +169,7 @@ extension ItemEditWorker {
                 completion(.failure(MyError.failToUploadImageOnFirebase(error.localizedDescription)))
             } else {
                 let imageUrl = downloadMetadata!.name!
+                print(downloadMetadata)
                 // successfully uploaded the image and got url, now upload the item
                 self.setItemOnFirebase(withImageUrl: imageUrl) { completion($0) }
             }

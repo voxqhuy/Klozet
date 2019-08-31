@@ -17,7 +17,21 @@
                     <view key="view" contentMode="scaleToFill" id="InW-lf-x1Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdZ-sr-Zj1">
+                                <rect key="frame" x="8" y="771" width="398" height="30"/>
+                                <state key="normal" title="delete Core Data"/>
+                                <connections>
+                                    <action selector="deleteCoreDataTapped:" destination="iFy-Vn-QpQ" eventType="touchUpInside" id="7LZ-KN-C5K"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="crb-w7-94u" firstAttribute="trailing" secondItem="YdZ-sr-Zj1" secondAttribute="trailing" constant="8" id="RwP-8i-p2U"/>
+                            <constraint firstItem="crb-w7-94u" firstAttribute="bottom" secondItem="YdZ-sr-Zj1" secondAttribute="bottom" constant="12" id="VgH-Gc-4hY"/>
+                            <constraint firstItem="YdZ-sr-Zj1" firstAttribute="leading" secondItem="crb-w7-94u" secondAttribute="leading" constant="8" id="Zkx-de-l3Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="crb-w7-94u"/>
                     </view>
                     <navigationItem key="navigationItem" id="XGQ-Ql-eOY"/>

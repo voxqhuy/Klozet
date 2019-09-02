@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="130" height="114"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyS-1C-0M4">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyS-1C-0M4">
                         <rect key="frame" x="0.0" y="0.0" width="130" height="114"/>
                     </imageView>
                 </subviews>
@@ -27,8 +27,8 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="QyS-1C-0M4" secondAttribute="bottom" id="EbW-gH-4ze"/>
                 <constraint firstItem="QyS-1C-0M4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ePG-17-vFp"/>
-                <constraint firstItem="QyS-1C-0M4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hMp-gK-PvX"/>
-                <constraint firstAttribute="trailing" secondItem="QyS-1C-0M4" secondAttribute="trailing" id="hnE-q6-Qlh"/>
+                <constraint firstItem="QyS-1C-0M4" firstAttribute="left" secondItem="gTV-IL-0wX" secondAttribute="left" id="hMp-gK-PvX"/>
+                <constraint firstAttribute="right" secondItem="QyS-1C-0M4" secondAttribute="right" id="hnE-q6-Qlh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="130" height="114"/>

@@ -14,17 +14,11 @@ enum FetchImageFirebaseResult {
     case success(UIImage)
 }
 
-typealias FetchImageFirebaseHandler = (FetchImageFirebaseResult) -> Void
+typealias FetchImageHandler = (FetchImageFirebaseResult) -> Void
 
-struct ItemCollectionWorker
+class ItemCollectionWorker
 {
-//    private let itemId: String
-//    
-//    init(itemId: String) {
-//        self.itemId = itemId
-//    }
-    
-    var fetchedResultsController: NSFetchedResultsController<Item> {
+    internal var fetchedResultsController: NSFetchedResultsController<Item> {
         let myCoreData = MyCoreData(modelName: "Klozet")
         
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -37,45 +31,69 @@ struct ItemCollectionWorker
             cacheName: nil)
     }
     
-//    internal func imageForItem(_ item: Item) -> UIImage? {
-//        if let image = UIImage(contentsOfFile: item.imageUrl?.path ?? "") {
-//            return image
-//        } else {
-//            let image = imageFromFirebase(forItemId: item.itemId)
-//            cacheNewImage(for: item)
-//        }
-//    }
-//    
-//    private func imageFromFirebase(forItemId itemId: String, completion: @escaping FetchImageFirebaseHandler) {
-//        FirestoreUtil().item(withId: itemId).getDocument { [weak self] (document, error) in
+    internal func fechItemsFromFirebase() {
+        
+    }
+    
+    internal func imageForItem(_ item: Item) -> UIImage? {
+        guard let itemId = item.itemId else { return nil }
+        
+        let imageUrl = FileManagerUtil().documentURL(forKey: "Item.\(itemId)")
+        do {
+            let imageData = try Data(contentsOf: imageUrl)
+            return UIImage(data: imageData)
+        } catch {
+            return nil
+        }
+        
+        
+    }
+    
+    
+//    func n() {
+//        guard let itemId = item.itemId else { return }
+//
+//        imageFromFirebase(forItemId: itemId) { [weak self ](fetchImageResult) in
 //            guard let self = self else { return }
-//            
-//            if let document = document, document.exists {
-////                let
-//                let imageUrl = document.data()!["imageUrl"] as! String
-//                // TODO
-//                // TODO imageFromFirebaseStorage
-//            } else {
+//
+//            switch fetchImageResult {
+//            case .failure:
 //                completion(.failure)
-//                print("Document does not exist")
+//            case let .success(image):
+//                completion(.success(image))
+//                self.saveNewImageToMemory(for: item, image: image)
 //            }
 //        }
 //    }
-//    
-//    private func imageFromFirebaseStorage(completion: @escaping FetchImageFirebaseHandler) {
-//        let imageRef = Storage.reference("url")
-//    
-//        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-//        if let error = error {
-//        // Uh-oh, an error occurred!
-//        } else {
-//        // Data for "images/island.jpg" is returned
-//        let image = UIImage(data: data!)
-//        }
-//        }
-//    }
     
-    private func cacheNewImage(for item: Item) {
-        // caches directory? or documents, maybe documents
+    
+    private func imageFromFirebase(forItemId itemId: String, completion: @escaping FetchImageHandler) {
+        FirestoreUtil().item(withId: itemId).getDocument { (document, error) in
+            
+            if let document = document, document.exists {
+                let imageUrl = document.data()!["imageUrl"] as! String
+                // get Image with the url from Firebase Storage
+                let imageRef = Storage.storage().reference(withPath: imageUrl)
+                
+                imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                    if error != nil {
+                        completion(.failure)
+                    } else {
+                        completion(.success(UIImage(data: data!)!))
+                    }
+                }
+            } else {
+                completion(.failure)
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    private func saveNewImageToMemory(for item: Item, image: UIImage) {
+        // cache Image in Documents Directory
+        let documentUrlForImage = FileManagerUtil().documentURL(forKey: "Item.\(String(describing: item.itemId))")
+        do {
+            try image.pngData()?.write(to: documentUrlForImage)
+        } catch {}
     }
 }

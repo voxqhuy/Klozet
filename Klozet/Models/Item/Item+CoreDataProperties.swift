@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  Klozet
 //
-//  Created by Huy Vo on 8/18/19.
+//  Created by Huy Vo on 9/1/19.
 //
 //
 
@@ -17,9 +17,8 @@ extension Item {
     }
 
     @NSManaged public var category: String?
-    @NSManaged public var imageUrl: URL?
     @NSManaged public var isFavorite: Bool
-    @NSManaged public var itemName: String?
     @NSManaged public var itemId: String?
+    @NSManaged public var itemName: String?
 
 }

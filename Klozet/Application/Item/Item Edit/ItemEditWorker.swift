@@ -26,7 +26,7 @@ class ItemEditWorker {
     
     private let coreDataEntity = "Item"
     private var firebasePath: String {
-        return "voxqhuy/Items/\(itemId).jpg"
+        return "voxqhuy/Items/\(itemModel.category)/\(itemId).jpg"
     }
     
     init?(itemModel: ItemModel, itemId: String? = nil)
@@ -53,8 +53,8 @@ class ItemEditWorker {
             case .success:
                 do {
                     // successfully create on firebase, now Core Data
-                    let imageUrl = try self.cacheImageAndReturnUrl()
-                    self.insertItem(withImageUrl: imageUrl)
+                    try self.cacheItemImage()
+                    self.insertItemToCoreData()
                     completion(.success)
                 } catch {
                     completion(.failure(error as! MyError))
@@ -87,12 +87,11 @@ class ItemEditWorker {
 
 // MARK: - File Manager
 extension ItemEditWorker {
-    private func cacheImageAndReturnUrl() throws -> URL
+    private func cacheItemImage() throws
     {
-        let imageUrl = FileManagerUtil().cachingURL(forKey: "Item.\(itemId)")
+        let imageUrl = FileManagerUtil().documentURL(forKey: "Item.\(itemId)")
         do {
             try imageData.write(to: imageUrl)
-            return imageUrl
         } catch {
             throw MyError.failToCacheImage
         }
@@ -102,17 +101,17 @@ extension ItemEditWorker {
 // Mark: - Core Data
 extension ItemEditWorker {
     // INSERT
-    private func insertItem(withImageUrl imageUrl: URL)
+    private func insertItemToCoreData()
     {
         let item = NSEntityDescription.insertNewObject(forEntityName: coreDataEntity, into: managedContext) as! Item
         item.itemId = itemId
         item.itemName = itemModel.name
         item.category = itemModel.category
         item.isFavorite = itemModel.isFavorite // TODO make favorite button
-        item.imageUrl = imageUrl
         
         myCoreData.saveContext()
     }
+    
     
     // FETCH
     private func itemFromCoreData() throws -> Item {
@@ -168,8 +167,7 @@ extension ItemEditWorker {
             if let error = error {
                 completion(.failure(MyError.failToUploadImageOnFirebase(error.localizedDescription)))
             } else {
-                let imageUrl = downloadMetadata!.name!
-                print(downloadMetadata)
+                let imageUrl = downloadMetadata!.path!
                 // successfully uploaded the image and got url, now upload the item
                 self.setItemOnFirebase(withImageUrl: imageUrl) { completion($0) }
             }

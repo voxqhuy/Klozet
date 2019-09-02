@@ -27,8 +27,6 @@ class ItemEditViewController: UIViewController {
     
     private var itemCategories: [ItemCategory] = MyData().itemCategories
     private var worker: ItemEditWorker!
-    private var imagePath: String!
-    
     
     // MARK: - View cycles
     override func viewWillAppear(_ animated: Bool) {

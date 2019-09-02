@@ -21,6 +21,12 @@ class ItemCollectionViewController: UICollectionViewController {
     
     private var items = [Item]()
     
+    private var numberOfItems: Int = 0 {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     
     // MARK: View cycles
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +34,8 @@ class ItemCollectionViewController: UICollectionViewController {
         
         navigationItem.title = MyData().itemCategories[categoryIndex!].categoryName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add item", style: .plain, target: self, action: #selector(addItemButtonTapped(_:)))
+        
+        fetchItems()
     }
     
     override func viewDidLoad() {
@@ -40,7 +48,7 @@ class ItemCollectionViewController: UICollectionViewController {
         let nib = UINib(nibName: cellNibName, bundle: nil)
         collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
 
-        fetchItems()
+//        fetchItems()
     }
     
     private func fetchItems() {
@@ -48,6 +56,12 @@ class ItemCollectionViewController: UICollectionViewController {
         
         do {
             try fetchedResultsController.performFetch()
+            guard let itemSectionInfo = fetchedResultsController.sections?[0] else {
+                numberOfItems = 0
+                return
+            }
+            numberOfItems = itemSectionInfo.numberOfObjects
+            
 //            collectionView.reloadData()
         } catch let error as NSError {
             print("Fetching error: \(error), \(error.userInfo)")
@@ -86,11 +100,7 @@ extension ItemCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        guard let itemSectionInfo = fetchedResultsController.sections?[section] else {
-            return 0
-        }
-        
-        return itemSectionInfo.numberOfObjects
+        return numberOfItems
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -98,11 +108,7 @@ extension ItemCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
         
         let item = fetchedResultsController.object(at: indexPath)
-//        cell.itemImageView.image = worker.imageForItem(item)
-        
-//        cell.itemImageView.image = worker.imageFromCache(url: item.imageUrl)
-//        cell.itemImageView.image = UIImage(contentsOfFile: item.imageUrl?.path ?? "")
-//        print(UIImage(contentsOfFile: item.imageUrl?.path ?? ""))
+        cell.itemImageView.image = worker.imageForItem(item)
         
         return cell
     }
@@ -111,7 +117,7 @@ extension ItemCollectionViewController {
 extension ItemCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let itemWidth = view.frame.width / 3
+        let itemWidth = UIScreen.main.bounds.width / 3
         return CGSize(width: itemWidth, height: itemWidth)
     }
 }
